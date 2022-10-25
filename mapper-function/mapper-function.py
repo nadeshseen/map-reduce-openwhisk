@@ -10,9 +10,9 @@ def main():
 
     params = json.loads(sys.argv[1])
     unique_id = params.get("unique_id")
-    splitdata_activation_id = params.get("activation_id")
+    driver_activation_id = params.get("driver_activation_id")
     
-    mapper_input_param = "mapper-input-"+splitdata_activation_id+"-"+unique_id
+    mapper_input_param = "mapper-input-"+driver_activation_id+"-"+unique_id
 
 
     input_data = pickle.loads(r.get(mapper_input_param))
@@ -23,11 +23,14 @@ def main():
 
         tokenize_data[i] = tokenize_data[i].replace(".", "")
     pickled_object = pickle.dumps(tokenize_data)
-    reducer_instance = "reducer-input-"+splitdata_activation_id+"-"+unique_id
+    reducer_instance = "reducer-input-"+driver_activation_id+"-"+unique_id
 
     r.set(reducer_instance, pickled_object)
 
     mapper_activation_id = os.getenv("__OW_ACTIVATION_ID")
+
+    print("Mapper function -", mapper_activation_id)
+    print("Driver function -", driver_activation_id)
     print(json.dumps( { "mapper-output-"+unique_id: str(tokenize_data)
                         ,"activation_id": str(mapper_activation_id)
                         }))

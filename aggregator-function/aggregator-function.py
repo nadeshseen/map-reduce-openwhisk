@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-
+import os
 import redis
 import json
 import pickle
@@ -8,14 +8,14 @@ def main():
     r = redis.Redis(host="10.129.28.219", port=6379, db=1)
     
     params = json.loads(sys.argv[1])
-    splitdata_activation_id = params["activation_id"]
+    driver_activation_id = params["driver_activation_id"]
     list_of_ids = params["list_of_ids"]
     overall_word_count = {}
     temp_str = ""
     for unique_id in list_of_ids:
         # print(key)
         # temp_str+= " --- "+str(unique_id) + "\n     "
-        input_path = "aggregator-input-"+splitdata_activation_id+"-"+str(unique_id)
+        input_path = "aggregator-input-"+driver_activation_id+"-"+str(unique_id)
         
         # print(unique_id)
         individual_word_count = pickle.loads(r.get(input_path))
@@ -27,9 +27,13 @@ def main():
                 overall_word_count[key]=value
     
     pickled_object = pickle.dumps(overall_word_count)
-    filename = "final-output-"+splitdata_activation_id
+    filename = "final-output-"+driver_activation_id
     r.set(filename, pickled_object)
-    print(filename)
+    # print(filename)
+
+    aggregator_activation_id = os.getenv("__OW_ACTIVATION_ID")
+    print("Aggregator function -", aggregator_activation_id)
+    print("Driver function -", driver_activation_id)
     print(json.dumps( {
         "aggregator-output": str(overall_word_count)
         ,"output_filename": str(filename)

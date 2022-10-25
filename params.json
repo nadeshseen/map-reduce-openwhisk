@@ -1,5 +1,6 @@
 {
-    "split_flag": "true"
-    ,"input_files": ["input2.txt"]
+    "split_in_ratio": "true"
+    ,"input_files": ["input1.txt"]
     ,"parallel_instances":"3"
+    ,"split_percentage_list":["30","30","40"]
 }
