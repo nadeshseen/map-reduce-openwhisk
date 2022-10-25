@@ -1,0 +1,5 @@
+{
+    "split_flag": "true"
+    ,"input_files": ["input2.txt"]
+    ,"parallel_instances":"3"
+}

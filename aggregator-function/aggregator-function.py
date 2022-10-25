@@ -29,10 +29,10 @@ def main():
     pickled_object = pickle.dumps(overall_word_count)
     filename = "final-output-"+splitdata_activation_id
     r.set(filename, pickled_object)
-    
+    print(filename)
     print(json.dumps( {
         "aggregator-output": str(overall_word_count)
-        # ,"list_of_ids": str(temp)
+        ,"output_filename": str(filename)
         }))
 
 if __name__ == "__main__":

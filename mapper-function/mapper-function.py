@@ -23,7 +23,6 @@ def main():
 
         tokenize_data[i] = tokenize_data[i].replace(".", "")
     pickled_object = pickle.dumps(tokenize_data)
-    
     reducer_instance = "reducer-input-"+splitdata_activation_id+"-"+unique_id
 
     r.set(reducer_instance, pickled_object)
