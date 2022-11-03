@@ -1,6 +1,8 @@
 {
-    "split_in_ratio": "true"
+    "split_file": "true"
     ,"input_files": ["input1.txt"]
-    ,"parallel_instances":"3"
-    ,"split_percentage_list":["30","30","40"]
+    
+    ,"mapper_split_percentage_list":["50","50"]
+    ,"reducer_split_percentage_list":["20","50","30"]
+
 }

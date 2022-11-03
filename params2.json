@@ -1,0 +1,7 @@
+{
+    "split_file": "true"
+    ,"input_files": ["input2.txt"]
+    ,"split_percentage_list":["30","30","40"]
+
+    ,"parallel_instances":"3"
+}

@@ -9,14 +9,16 @@ def main():
     
     params = json.loads(sys.argv[1])
     driver_activation_id = params["driver_activation_id"]
-    list_of_ids = params["list_of_ids"]
+    
+    data_list = pickle.loads(r.get(params["data_list"]))
+    print(data_list)
     overall_word_count = {}
     temp_str = ""
-    for unique_id in list_of_ids:
+    for unique_id in data_list:
         # print(key)
         # temp_str+= " --- "+str(unique_id) + "\n     "
         input_path = "aggregator-input-"+driver_activation_id+"-"+str(unique_id)
-        
+        print(input_path)
         # print(unique_id)
         individual_word_count = pickle.loads(r.get(input_path))
         
