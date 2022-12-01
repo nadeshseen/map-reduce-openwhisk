@@ -8,6 +8,7 @@ import redis
 import pickle
 import json
 import os
+import time
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
 
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
@@ -31,7 +32,7 @@ def start_splitdata_instance(log_data, input_filename, driver_activation_id, map
     log_data+=str(reply)+"\n"
 
     r = redis.Redis(host="10.129.28.219", port=6379, db=1)
-    return int(reply["splitdata"]), log_data, pickle.loads(r.get(reply["mapper_list_key"])), pickle.loads(r.get(reply["reducer_list_key"])), reply["data_list_key"]
+    return log_data, pickle.loads(r.get(reply["mapper_list_key"])), pickle.loads(r.get(reply["reducer_list_key"])), reply["data_list_key"]
 
 def mapper_function(unique_id, driver_activation_id):
     reply = requests.post(url = "https://10.129.28.219:31001/api/23bc46b1-71f6-4ed5-8c54-816aa4f8c502/mapper-function/mapper",
@@ -132,6 +133,7 @@ def main():
     data_list=[]
     mapper_split_percentage_list=[]
     reducer_split_percentage_list=[]
+
     if len(sys.argv) == 2:
         params = json.loads(sys.argv[1])
         if "input_files" in params.keys():
@@ -146,26 +148,40 @@ def main():
     
 
     if split_file == "false":
-        number_of_mapper_instances = parallel_instances
+        pass
     else:
         input_filename = input_files[0]
-
+        
         mapper_split_percentage_list_key = "mapper_split_percentage_list_"+str(driver_activation_id)
         reducer_split_percentage_list_key = "reducer_split_percentage_list_"+str(driver_activation_id)
         r.set(mapper_split_percentage_list_key, pickle.dumps(mapper_split_percentage_list))
         r.set(reducer_split_percentage_list_key, pickle.dumps(reducer_split_percentage_list))
-        number_of_mapper_instances, log_data, mapper_list, reducer_list, data_list = \
+        start = time.time()
+        log_data, mapper_list, reducer_list, data_list = \
             start_splitdata_instance(log_data, input_filename, driver_activation_id, mapper_split_percentage_list_key, reducer_split_percentage_list_key, split_file)
-        print(mapper_split_percentage_list_key, mapper_split_percentage_list)
-        print(reducer_split_percentage_list_key, reducer_split_percentage_list)
+        end = time.time()
+        split_time = end-start
+        print(end-start)
+        # print(mapper_split_percentage_list_key, mapper_split_percentage_list)
+        # print(reducer_split_percentage_list_key, reducer_split_percentage_list)
 
-    number_of_reducer_instances = number_of_mapper_instances
+    start = time.time()
     start_mapper_instances(mapper_list, driver_activation_id)
+    end = time.time()
+    print(end-start)
+    mapper_time = end-start
+
+    start = time.time()
     start_reducer_instances(reducer_list, driver_activation_id)
+    end = time.time()
+    print(end-start)
+    reducer_time = end-start
 
+    start = time.time()
     agg_reply = start_aggregator_instances(data_list, driver_activation_id)
-
-
+    end = time.time()
+    print(end-start)
+    aggre_time = end-start
     
     r.set("log_data", pickle.dumps(log_data))
 
@@ -180,9 +196,14 @@ def main():
         }
         ,"output":{
             "output_filename": str(agg_reply["output_filename"])
-            ,"number_of_mapper_instances": str(number_of_mapper_instances)
-            ,"number_of_reducer_instances": str(number_of_reducer_instances)
+            ,"number_of_mapper_instances": str(len(mapper_list))
+            ,"number_of_reducer_instances": str(len(reducer_list))
             ,"output": str(agg_reply["aggregator-output"])
+            ,"split_time": str(split_time)
+            ,"mapper_time": str(mapper_time)
+            ,"reducer_time": str(reducer_time)
+            ,"aggre_time": str(aggre_time)
+            
         }
     }))
 
