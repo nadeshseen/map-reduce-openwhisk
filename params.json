@@ -1,7 +1,10 @@
 {
-    "split_file": "true"
-    ,"input_files": ["input.txt"]
-    
+    "input_files": ["input.txt"]
+    ,"block_size":"1000"
+    ,"mapper_distribution_using":"number"
+    ,"reducer_distribution_using":"number"
+    ,"mapper_parallel_instances":"2"
+    ,"reducer_parallel_instances":"2"
     ,"mapper_split_percentage_list":["50","50"]
     ,"reducer_split_percentage_list":["20","50","30"]
 

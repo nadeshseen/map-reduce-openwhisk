@@ -5,7 +5,8 @@ ENV FLASK_PROXY_PORT 8080
 
 # Install our action's Python dependencies
 ADD requirements.txt /action/requirements.txt
-RUN cd /action; pip install -r requirements.txt
+RUN apk add gcc; apk add linux-headers; apk add musl-dev;
+RUN cd /action; pip3 install -r requirements.txt
 
 # Ensure source assets are not drawn from the cache 
 # after this date

@@ -13,26 +13,41 @@ from requests.packages.urllib3.exceptions import InsecureRequestWarning
 
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
-def start_splitdata_instance(log_data, input_filename, driver_activation_id, mapper_split_percentage_list_key, reducer_split_percentage_list_key, split_file):
+def start_splitdata_instance(input_filename
+                            , driver_activation_id
+                            , mapper_split_percentage_list_key
+                            , reducer_split_percentage_list_key
+                            , mapper_distribution_using
+                            , reducer_distribution_using
+                            , mapper_parallel_instances
+                            , reducer_parallel_instances
+                            , split_file
+                            , block_size):
     # print("Split Data")
-    log_data+="Split Data"+"\n"
-
+    # log_data+="Split Data"+"\n"
+    rand_list=[]
     reply = requests.post(url = "https://10.129.28.219:31001/api/23bc46b1-71f6-4ed5-8c54-816aa4f8c502/splitdata-function/split"
     ,json = {
             "filename": str(input_filename)
             ,"driver_activation_id":str(driver_activation_id)
             ,"mapper_split_percentage_list_key":mapper_split_percentage_list_key
             ,"reducer_split_percentage_list_key":reducer_split_percentage_list_key
+            ,"mapper_distribution_using":mapper_distribution_using
+            ,"reducer_distribution_using":reducer_distribution_using
+            ,"mapper_parallel_instances":mapper_parallel_instances
+            ,"reducer_parallel_instances":reducer_parallel_instances
             ,"split_file": split_file
+            ,"block_size": block_size
+            ,"list": rand_list
             }
     ,verify=False)
     reply = reply.json()
 
     # print(reply)
-    log_data+=str(reply)+"\n"
+    # log_data+=str(reply)+"\n"
 
     r = redis.Redis(host="10.129.28.219", port=6379, db=1)
-    return log_data, pickle.loads(r.get(reply["mapper_list_key"])), pickle.loads(r.get(reply["reducer_list_key"])), reply["data_list_key"]
+    return pickle.loads(r.get(reply["mapper_list_key"])), pickle.loads(r.get(reply["reducer_list_key"])), reply["data_list_key"], reply["num_blocks"]
 
 def mapper_function(unique_id, driver_activation_id):
     reply = requests.post(url = "https://10.129.28.219:31001/api/23bc46b1-71f6-4ed5-8c54-816aa4f8c502/mapper-function/mapper",
@@ -92,7 +107,7 @@ def start_aggregator_instances(data_list, driver_activation_id):
     # print(reply)  
 
     # print("Aggrregator Functions ended")
-    print()
+    # print()
     return reply
 
 def clear_db():
@@ -120,89 +135,138 @@ def output_db(splitdata_activation_id):
     # print()
 
 def main():
+
+    start=time.time()
     r = redis.Redis(host="10.129.28.219", port=6379, db=1)
     log_data = ""
     # input_db()
     input_files = [] #default
     split_file = "true"
-    parallel_instances = 1
-    number_of_mapper_instances = 1
+    block_size=100 #default
+    mapper_distribution_using = ""
+    reducer_distribution_using = ""
+    mapper_parallel_instances=1
+    reducer_parallel_instances=1
     driver_activation_id = os.getenv("__OW_ACTIVATION_ID")
+
     mapper_list=[]
     reducer_list=[]
     data_list=[]
     mapper_split_percentage_list=[]
     reducer_split_percentage_list=[]
 
-    if len(sys.argv) == 2:
-        params = json.loads(sys.argv[1])
+    if len(sys.argv) >= 2:
+        if driver_activation_id==None:
+            input_json_file = open(sys.argv[1])
+            params = json.load(input_json_file)
+            print(params)
+        else:
+            params = json.loads(sys.argv[1])
+            print(params)
         if "input_files" in params.keys():
             input_files = params["input_files"]
         if "split_file" in params.keys():
             split_file = params["split_file"]
-            
+        if "block_size" in params.keys():
+            block_size = params["block_size"]
+        
+        if "mapper_distribution_using" in params.keys():
+            mapper_distribution_using = params["mapper_distribution_using"]
+
+        if "reducer_distribution_using" in params.keys():
+            reducer_distribution_using = params["reducer_distribution_using"]
         if "mapper_split_percentage_list" in params.keys():
             mapper_split_percentage_list = params["mapper_split_percentage_list"]
         if "reducer_split_percentage_list" in params.keys():
             reducer_split_percentage_list = params["reducer_split_percentage_list"]
     
+        if "mapper_parallel_instances" in params.keys():
+            mapper_parallel_instances = params["mapper_parallel_instances"]
 
-    if split_file == "false":
-        pass
-    else:
-        input_filename = input_files[0]
-        
-        mapper_split_percentage_list_key = "mapper_split_percentage_list_"+str(driver_activation_id)
-        reducer_split_percentage_list_key = "reducer_split_percentage_list_"+str(driver_activation_id)
-        r.set(mapper_split_percentage_list_key, pickle.dumps(mapper_split_percentage_list))
-        r.set(reducer_split_percentage_list_key, pickle.dumps(reducer_split_percentage_list))
-        start = time.time()
-        log_data, mapper_list, reducer_list, data_list = \
-            start_splitdata_instance(log_data, input_filename, driver_activation_id, mapper_split_percentage_list_key, reducer_split_percentage_list_key, split_file)
-        end = time.time()
-        split_time = end-start
-        print(end-start)
-        # print(mapper_split_percentage_list_key, mapper_split_percentage_list)
-        # print(reducer_split_percentage_list_key, reducer_split_percentage_list)
+        if "reducer_parallel_instances" in params.keys():
+            reducer_parallel_instances = params["reducer_parallel_instances"]
+
+    # if split_file == "false":
+    #     pass
+    # else:
+    input_filename = input_files[0]
+    
+    mapper_split_percentage_list_key = "mapper_split_percentage_list_"+str(driver_activation_id)
+    reducer_split_percentage_list_key = "reducer_split_percentage_list_"+str(driver_activation_id)
+    r.set(mapper_split_percentage_list_key, pickle.dumps(mapper_split_percentage_list))
+    r.set(reducer_split_percentage_list_key, pickle.dumps(reducer_split_percentage_list))
+    end = time.time()
+    remaining_time = end-start
+    print("remaining_time", remaining_time)
+    start = time.time()
+    mapper_list, reducer_list, data_list, num_blocks = \
+        start_splitdata_instance(
+            input_filename
+            ,driver_activation_id
+            ,mapper_split_percentage_list_key
+            ,reducer_split_percentage_list_key
+            ,mapper_distribution_using
+            ,reducer_distribution_using
+            ,mapper_parallel_instances
+            ,reducer_parallel_instances
+            ,split_file
+            ,block_size)
+    end = time.time()
+    
+    split_time = end-start
+    print("split_time", split_time)
+    # print(mapper_split_percentage_list_key, mapper_split_percentage_list)
+    # print(reducer_split_percentage_list_key, reducer_split_percentage_list)
 
     start = time.time()
     start_mapper_instances(mapper_list, driver_activation_id)
     end = time.time()
-    print(end-start)
+    
     mapper_time = end-start
+    print("mapper_time", mapper_time)
 
     start = time.time()
     start_reducer_instances(reducer_list, driver_activation_id)
     end = time.time()
-    print(end-start)
+    
     reducer_time = end-start
+    print("reducer_time", reducer_time)
 
     start = time.time()
     agg_reply = start_aggregator_instances(data_list, driver_activation_id)
     end = time.time()
-    print(end-start)
-    aggre_time = end-start
     
-    r.set("log_data", pickle.dumps(log_data))
+    aggre_time = end-start
+    print("aggre_time", aggre_time)
+    time_stat = {
+        "split_time":split_time
+        ,"mapper_time":mapper_time
+        ,"reducer_time":reducer_time
+        ,"aggre_time":aggre_time
+    }
+    r.set("driver_time_stat", pickle.dumps(time_stat))
 
     print(json.dumps({
         "input":{
             "input_files": str(input_filename)
-            ,"split_file": str(split_file)
-            # ,"parallel_instances": str(parallel_instances)
+            # ,"split_file": str(split_file)
+            ,"mapper_parallel_instances": str(mapper_parallel_instances)
+            ,"reducer_parallel_instances": str(reducer_parallel_instances)
             ,"driver_activation_id":str(driver_activation_id)
-            ,"mapper_split_percentage_list":str(mapper_split_percentage_list)
-            ,"reducer_split_percentage_list":str(reducer_split_percentage_list)
+            ,"num_blocks":num_blocks
+            # ,"mapper_split_percentage_list":str(mapper_split_percentage_list)
+            # ,"reducer_split_percentage_list":str(reducer_split_percentage_list)
         }
         ,"output":{
             "output_filename": str(agg_reply["output_filename"])
             ,"number_of_mapper_instances": str(len(mapper_list))
             ,"number_of_reducer_instances": str(len(reducer_list))
-            ,"output": str(agg_reply["aggregator-output"])
+            # ,"output": str(agg_reply["aggregator-output"])
             ,"split_time": str(split_time)
             ,"mapper_time": str(mapper_time)
             ,"reducer_time": str(reducer_time)
             ,"aggre_time": str(aggre_time)
+            ,"remaining_time":str(remaining_time)
             
         }
     }))
