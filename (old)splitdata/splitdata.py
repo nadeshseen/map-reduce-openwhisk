@@ -8,7 +8,6 @@ import math
 import textwrap
 import time
 import psutil
-data_list=[]
 
 def partition_based_on_list(split_percentage_list
                             ,data_list):

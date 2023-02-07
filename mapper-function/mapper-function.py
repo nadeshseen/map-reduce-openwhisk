@@ -5,9 +5,24 @@ import json
 import pickle
 import sys
 import time
+import requests
+import rediscluster
+
+def wake_up(function_type, unique_id, activation_id):
+    server_ip = "10.129.28.219"
+    server_port = "5001"
+    driver_url = "http://"+server_ip+":"+server_port+"/wake-up/"
+    print(driver_url)
+    reply = requests.post(url = driver_url, json = {"function_type": str(function_type), "unique_id": str(unique_id), "activation_id": str(activation_id)})
+
+    print(reply.json())
+    
+
+
 def main():
     total_start = time.time()
-    r = redis.Redis(host="10.129.28.219", port=6379, db=1)
+    startup_nodes = [{"host": "10.129.28.57", "port": "7000"}]
+    r = rediscluster.RedisCluster(startup_nodes=startup_nodes)
 
     params = json.loads(sys.argv[1])
     unique_id = params.get("unique_id")
@@ -44,11 +59,16 @@ def main():
     total_end = time.time()
     total_execution_time = total_end - total_start
     r.set("mapper-total-time-"+unique_id, pickle.dumps(str(total_execution_time)))
-
+    wake_up("mapper", unique_id, activation_id)
     print(json.dumps( { 
                         "mapper-output-"+unique_id: str(mapper_mapping_table[unique_id])
                         ,"activation_id": str(mapper_activation_id)
                         }))
+    
+    return( { 
+                    "mapper-output-"+unique_id: str(mapper_mapping_table[unique_id])
+                    ,"activation_id": str(mapper_activation_id)
+                    })
     # return my_dict
 # main("nadesh")
 if __name__ == "__main__":

@@ -4,11 +4,11 @@ import subprocess
 import threading
 import redis
 import pickle
-
+import rediscluster
 
 def clear_db():
     # reply = subprocess.check_output(["redis-cli -h 10.129.28.219 -n 1 flushdb"], shell=True)
-    reply = subprocess.check_output(["redis-cli -h 10.129.28.219 flushall"], shell=True)
+    reply = subprocess.check_output(["redis-cli -h 10.129.28.57 -p 7000 flushall"], shell=True)
     print(reply.decode('utf-8'))
     pass
 
@@ -16,7 +16,8 @@ def input_db(filename):
     # if sys
     file = open(filename)
     file_contents = file.read()
-    r = redis.Redis(host='10.129.28.219', port=6379, db=1)
+    startup_nodes = [{"host": "10.129.28.57", "port": "7000"}]
+    r = rediscluster.RedisCluster(startup_nodes=startup_nodes)
     pickled_object = pickle.dumps(file_contents)
     r.set(filename, pickled_object)
     # file_contents = pickle.loads(r.get(filename))
@@ -26,7 +27,8 @@ def final_output(output_filename):
     # filename = "final-output-"+splitdata_activation_id
     filename = output_filename
     print("Output stored in Redis with key",filename)
-    r = redis.Redis(host='10.129.28.219', port=6379, db=1)
+    startup_nodes = [{"host": "10.129.28.57", "port": "7000"}]
+    r = rediscluster.RedisCluster(startup_nodes=startup_nodes)
     file_contents = pickle.loads(r.get(filename))
     # print(len(file_contents))
     print(file_contents)
@@ -34,15 +36,17 @@ def final_output(output_filename):
 def output_length(output_filename):
     filename = output_filename
     print("Output stored in Redis with key",filename)
-    r = redis.Redis(host='10.129.28.219', port=6379, db=1)
+    startup_nodes = [{"host": "10.129.28.57", "port": "7000"}]
+    r = rediscluster.RedisCluster(startup_nodes=startup_nodes)
     file_contents = pickle.loads(r.get(filename))
-    file_contents = file_contents.split('\n')
+    # file_contents = file_contents.split('\n')
     print(len(file_contents))
 
 def compute_words(output_filename):
     filename = output_filename
     print("Output stored in Redis with key",filename)
-    r = redis.Redis(host='10.129.28.219', port=6379, db=1)
+    startup_nodes = [{"host": "10.129.28.57", "port": "7000"}]
+    r = rediscluster.RedisCluster(startup_nodes=startup_nodes)
     file_contents = pickle.loads(r.get(filename))
     file_contents = file_contents.split()
     print(len(file_contents))
@@ -51,7 +55,8 @@ def output_db(output_filename):
     # filename = "final-output-"+splitdata_activation_id
     filename = output_filename
     print("Output stored in Redis with key",filename)
-    r = redis.Redis(host='10.129.28.219', port=6379, db=1)
+    startup_nodes = [{"host": "10.129.28.57", "port": "7000"}]
+    r = rediscluster.RedisCluster(startup_nodes=startup_nodes)
     file_contents = pickle.loads(r.get(filename))
     print(len(file_contents))
     # print(file_contents)
@@ -61,7 +66,8 @@ def calc(output_filename):
     # filename = "final-output-"+splitdata_activation_id
     filename = output_filename
     print("Output stored in Redis with key",filename)
-    r = redis.Redis(host='10.129.28.219', port=6379, db=1)
+    startup_nodes = [{"host": "10.129.28.57", "port": "7000"}]
+    r = rediscluster.RedisCluster(startup_nodes=startup_nodes)
     file_contents = pickle.loads(r.get(filename))
     print(file_contents)
     print()

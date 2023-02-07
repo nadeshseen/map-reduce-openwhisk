@@ -4,8 +4,12 @@ import redis
 import json
 import pickle
 import sys
+import rediscluster
+
 def main():
-    r = redis.Redis(host="10.129.28.219", port=6379, db=1)
+
+    startup_nodes = [{"host": "10.129.28.57", "port": "7000"}]
+    r = rediscluster.RedisCluster(startup_nodes=startup_nodes)
     
     params = json.loads(sys.argv[1])
     activation_id = str(params["activation_id"])
@@ -39,7 +43,11 @@ def main():
     print(json.dumps( {
         "aggregator-output": str(len(overall_word_count))
         ,"output_filename": str(filename)
-        }))
+        }))    
+    return( {
+        "aggregator-output": str(len(overall_word_count))
+        ,"output_filename": str(filename)
+        })
 
 if __name__ == "__main__":
     main()

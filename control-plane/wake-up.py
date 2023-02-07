@@ -33,19 +33,29 @@ def testing():
 
     # print(sum)
 
-def server():
+
+def wake_up():
     server_ip = "10.129.28.219"
     server_port = "5001"
-    driver_url = "http://"+server_ip+":"+server_port+"/driver-function/"
-    input_json_file = open(sys.argv[1])
-    params = json.load(input_json_file)
-    print(params)
-    reply = requests.post(url = driver_url, json = params)
+    driver_url = "http://"+server_ip+":"+server_port+"/wake-up/"
+    # input_json_file = open(sys.argv[1])
+    # params = json.load(input_json_file)
+    # print(params)
+
+    function_type = "mapper"
+    unique_id = "1"
+    activation_id = "None"
+    
+    unique_id=sys.argv[1]
+    function_type=sys.argv[2]
+    reply = requests.post(url = driver_url, json = {"function_type": str(function_type), "unique_id": str(unique_id), "activation_id": str(activation_id)})
 
     print(reply.json())
+    
+
 def main():
 
-    server()
+    wake_up()
     
 
     
