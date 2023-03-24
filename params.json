@@ -1,12 +1,19 @@
 {
-    "input_files": ["input.txt"]
-    ,"block_size":"44000000"
-    ,"mapper_distribution_using":"number"
-    ,"reducer_distribution_using":"number"
-    ,"mapper_parallel_instances":"10"
-    ,"reducer_parallel_instances":"10"
-    ,"mapper_split_percentage_list":["50","50"]
-    ,"reducer_split_percentage_list":["20","50","30"]
-    ,"mapper":"mapper_url"
+    "storage":{
+        "type":"redis-cluster",
+        "startup_nodes" : [{"host": "10.129.28.57", "port": "7000"}]
+    }
+    ,"input_files": ["input_42m_1.txt"]
+    ,"block_size":"2"
+    ,"blocks_per_instance":"4"
+    ,"mapper_url":"https://10.129.28.219:31001/api/23bc46b1-71f6-4ed5-8c54-816aa4f8c502/mapper-function/mapper"
+    ,"reducer_url":"https://10.129.28.219:31001/api/23bc46b1-71f6-4ed5-8c54-816aa4f8c502/reducer-function/reducer"
+    ,"aggregator_url":"https://10.129.28.219:31001/api/23bc46b1-71f6-4ed5-8c54-816aa4f8c502/aggregator-function/aggregate"
+
+
+
+
+    ,"mapper_parallel_instances":"1"
+    ,"reducer_parallel_instances":"1"
 
 }

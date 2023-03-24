@@ -1,0 +1,14 @@
+{
+    "config_file" : {
+        "web_server":{
+            "url":"10.129.28.219",
+            "port":"5002"
+        }
+        ,"storage":{
+            "type":"redis-cluster",
+            "startup_nodes" : [{"host": "10.129.28.57", "port": "7000"}]
+        }
+    },"mapper_mapping_table_key":"mapper_mapping_table_key_None"
+    ,"unique_id":"1"
+    ,"activation_id":"None"
+}

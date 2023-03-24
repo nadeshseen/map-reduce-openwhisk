@@ -1,0 +1,1 @@
+kubectl top pods -n openwhisk > logs.txt

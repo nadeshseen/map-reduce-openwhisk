@@ -17,6 +17,7 @@ def main():
     data_list = pickle.loads(r.get(params["data_list_key"]))
     # print(data_list)
     overall_word_count = {}
+    temp_str = ""
     for unique_id in data_list:
         # print(key)
         # temp_str+= " --- "+str(unique_id) + "\n     "
@@ -30,25 +31,21 @@ def main():
                 overall_word_count[key]+=value
             else:
                 overall_word_count[key]=value
-        del(individual_word_count)
-    pickled_object = pickle.dumps(overall_word_count)
     
-    length_of_overall_word_count = len(overall_word_count)
-    del(overall_word_count)
+    pickled_object = pickle.dumps(overall_word_count)
     filename = "final-output-"+activation_id
     r.set(filename, pickled_object)
-    del(pickled_object)
     # print(filename)
 
     aggregator_activation_id = os.getenv("__OW_ACTIVATION_ID")
     print("Aggregator function -", aggregator_activation_id)
     print("Driver function -", activation_id)
     print(json.dumps( {
-        "aggregator-output": str(length_of_overall_word_count)
+        "aggregator-output": str(len(overall_word_count))
         ,"output_filename": str(filename)
         }))    
     return( {
-        "aggregator-output": str(length_of_overall_word_count)
+        "aggregator-output": str(len(overall_word_count))
         ,"output_filename": str(filename)
         })
 
