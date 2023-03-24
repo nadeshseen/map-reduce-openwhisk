@@ -1,0 +1,1 @@
+yes "the quick brown fox jumps over the lazy dog" | head -n $1 > $2
