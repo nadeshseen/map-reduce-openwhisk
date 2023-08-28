@@ -21,22 +21,22 @@
     },
     "intermediate_storage": {
         "location": "remote",
-        "endpoint_ip": "10.129.26.118",
-        "endpoint_port": "30772",
-        "access_key": "minio",
-        "secret_key": "12345678",
-        "bucket_name": "temporarydata"
+        "endpoint_ip": "localhost",
+        "endpoint_port": "9000",
+        "access_key": "localstoragekey",
+        "secret_key": "localstoragekey",
+        "bucket_name": "localbucket"
     },
     "upload_required": "false",
-    "split_required": "true",
+    "split_required": "false",
     "input_path": "./input_files/",
     "input_files": [
-        "input_4m_1.txt",
-        "input_4m_1.txt",
-        "input_4m_1.txt",
-        "input_4m_1.txt"
+        "input_84m_1.txt",
+        "input_84m_1.txt",
+        "input_84m_1.txt",
+        "input_84m_1.txt"
     ],
-    "input_data_size": "16",
+    "input_data_size": "336",
     "block_size": "4",
     "mapper_parallel_instances": "4",
     "reducer_parallel_instances": "1",

@@ -1,0 +1,4 @@
+redis==3.0.0
+redis-py-cluster
+minio
+requests

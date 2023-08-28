@@ -1,3 +1,5 @@
-How to run?
-1. Go to cliert-server-driver folder and run the driver.py server
-2. Use client.py python script to run count word application
+Abstract
+
+Hadoop MapReduce is a prominent choice for developing data processing applications; however, establishing and maintaining Hadoop clusters can be costly and time-intensive. Consequently, serverless computing environments have gained popularity as they abstract infrastructure management, enabling users to concentrate on their application's core logic. Numerous researchers and organizations have recently developed serverless computing frameworks for data processing. Nevertheless, most of these frameworks depend on AWS Lambda as the serverless computing platform and S3 storage for intermediate storage, making it challenging to pinpoint optimizations specific to the MapReduce paradigm within the serverless platform.
+
+Therefore, we aim to provide a control plane running MapReduce in a serverless environment. To accomplish this objective, we have developed SMAREO. This open-source serverless framework executes MapReduce jobs utilizing OpenWhisk as the serverless platform, with Redis employed for metadata storage and MinIO for persistent data storage. Additionally, we present the design, challenges, and potential optimizations associated with our implementation.

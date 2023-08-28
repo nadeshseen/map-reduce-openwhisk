@@ -1,0 +1,6 @@
+echo "###############smareo-primary#################"
+ssh smareo@10.129.26.3 "sudo kubeadm init --pod-network-cidr=10.244.0.0/16"
+echo "###############kubeadminit####################"
+ssh smareo@10.129.26.3 "mkdir -p $HOME/.kube && sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config && sudo chown $(id -u):$(id -g) $HOME/.kube/config"
+ssh smareo@10.129.26.3 "kubectl apply -f https://raw.githubusercontent.com/flannel-io/flannel/master/Documentation/kube-flannel.yml"
+echo "############Done###################"

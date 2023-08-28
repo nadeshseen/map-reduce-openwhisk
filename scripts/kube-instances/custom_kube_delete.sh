@@ -1,0 +1,4 @@
+kubectl get pods -n openwhisk --no-headers=true | awk '/mapperfunction/{print $1}'| xargs  kubectl delete -n openwhisk pod
+kubectl get pods -n openwhisk --no-headers=true | awk '/reducerfunction/{print $1}'| xargs  kubectl delete -n openwhisk pod
+kubectl get pods -n openwhisk --no-headers=true | awk '/aggregatorfunction/{print $1}'| xargs  kubectl delete -n openwhisk pod
+# kubectl get pods -n openwhisk --no-headers=true | awk '/prewarm-nodejs/{print $1}'| xargs  kubectl delete -n openwhisk pod
