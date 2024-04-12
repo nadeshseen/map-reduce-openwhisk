@@ -5,10 +5,12 @@ def main():
         num_lines = int(sys.argv[2])
         print(filename)
         file_fd = open(filename, "w")
-        # line="the quick brown fox jumps over the lazy dog\n"
+        # header="transaction_id, "
+        line="the quick brown fox jumps over the lazy dog\n"
+        lines=""
         for i in range(0,num_lines):
-            line="the"+str(i)+" quick"+str(i)+" brown"+str(i)+" fox"+str(i)+" jumps"+str(i)+" over"+str(i)+" the"+str(i)+" lazy"+str(i)+" dog"+str(i)+"\n"
-            file_fd.writelines(line)
+            lines+=line
+        file_fd.writelines(lines)
         file_fd.close()
     except:
         print("Command Format is:")

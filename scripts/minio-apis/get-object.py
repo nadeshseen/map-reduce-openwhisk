@@ -2,27 +2,20 @@ from minio import Minio
 from minio.error import S3Error
 import pickle
 import json
+import sys
 def main():
     # Create a client with the MinIO server playground, its access key
     # and secret key.
     client = Minio(
-        "10.129.26.184:9000",
-        access_key="2OD6Pu39mU4fiieA",
-        secret_key="bfv7DPEr86IcC1hhlhUuHqQMOlFGGSEF",
+        endpoint="10.129.28.254:31196",
+        access_key="minio",
+        secret_key="12345678",
         secure=False,
     )
-
-    # Make 'smareo' bucket if not exist.
-    # Get data of an object.
-    activation_id = "None"
-    data_id = "1"
-    mapper_input_param = "mapper-input-"+activation_id+"-"+data_id
-    response = client.get_object("smareo", mapper_input_param)
-    print(json.dumps(pickle.loads(client.get_object("smareo", "final-output-1").data), indent=4))
-    # print(response.data)
-    # Read data from response.
-    response.close()
-    response.release_conn()
+    file_num = sys.argv[1]
+    # print(file_num)
+    input_file_name = "input_unique_5m_100m_"+file_num+".txt"
+    client.fget_object("input", input_file_name, "test/"+input_file_name)
 
 if __name__ == "__main__":
     try:

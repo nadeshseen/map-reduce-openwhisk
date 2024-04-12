@@ -4,7 +4,7 @@ def main():
         filename = sys.argv[1]
         num_lines = int(sys.argv[2])
         print(filename)
-        file_fd = open(filename, "w")
+        file_fd = open(filename, "a")
         line="the quick brown fox jumps over the lazy dog\n"
         lines=""
         for i in range(0,num_lines):

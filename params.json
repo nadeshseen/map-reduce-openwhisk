@@ -14,7 +14,7 @@
     },
     "data_store": {
         "type": "minio",
-        "endpoint": "10.129.26.118:30772",
+        "endpoint": "10.129.26.118:31043",
         "access_key": "minio",
         "secret_key": "12345678",
         "bucket_name": "smareo"
@@ -22,7 +22,7 @@
     "intermediate_storage": {
         "location": "remote",
         "endpoint_ip": "10.129.26.118",
-        "endpoint_port": "30772",
+        "endpoint_port": "31043",
         "access_key": "minio",
         "secret_key": "12345678",
         "bucket_name": "temporarydata"
@@ -31,14 +31,11 @@
     "split_required": "true",
     "input_path": "./input_files/",
     "input_files": [
-        "input_4m_1.txt",
-        "input_4m_1.txt",
-        "input_4m_1.txt",
         "input_4m_1.txt"
     ],
-    "input_data_size": "16",
+    "input_data_size": "4",
     "block_size": "4",
-    "mapper_parallel_instances": "4",
+    "mapper_parallel_instances": "1",
     "reducer_parallel_instances": "1",
     "mapper_distribution_using": "one-to-one",
     "reducer_distribution_using": "one-to-one",

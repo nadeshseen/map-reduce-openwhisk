@@ -1,0 +1,1051 @@
+[2024-03-25T21:40:36.684Z] [INFO] Slf4jLogger started
+[2024-03-25T21:40:37.494Z] [INFO] [#tid_sid_unknown] [Config] environment set value for whisk.api.host.name
+[2024-03-25T21:40:37.497Z] [INFO] [#tid_sid_unknown] [Config] environment set value for whisk.api.host.proto
+[2024-03-25T21:40:37.497Z] [INFO] [#tid_sid_unknown] [Config] environment set value for whisk.api.host.port
+[2024-03-25T21:40:37.497Z] [INFO] [#tid_sid_unknown] [Config] environment set value for zookeeper.hosts
+[2024-03-25T21:40:37.497Z] [INFO] [#tid_sid_unknown] [Config] environment set value for runtimes.manifest
+[2024-03-25T21:40:37.498Z] [INFO] [#tid_sid_unknown] [Config] environment set value for kafka.hosts
+[2024-03-25T21:40:37.498Z] [INFO] [#tid_sid_unknown] [Config] environment set value for port
+[2024-03-25T21:40:37.755Z] [INFO] [#tid_sid_unknown] [Invoker] Command line arguments parsed to yield CmdLineArgs(Some(owdev-invoker-5),None,None)
+[2024-03-25T21:40:37.756Z] [INFO] [#tid_sid_unknown] [InstanceIdAssigner] invokerReg: creating zkClient to owdev-zookeeper-0.owdev-zookeeper.openwhisk.svc.cluster.local:2181
+[2024-03-25T21:40:37.823Z] [INFO] Running in ZooKeeper 3.4.x compatibility mode
+[2024-03-25T21:40:37.853Z] [INFO] Starting
+[2024-03-25T21:40:37.861Z] [INFO] Client environment:zookeeper.version=3.4.11-37e277162d567b55a07d1755f0b31c32e93c01a0, built on 11/01/2017 18:06 GMT
+[2024-03-25T21:40:37.862Z] [INFO] Client environment:host.name=owdev-invoker-5.owdev-invoker.openwhisk.svc.cluster.local
+[2024-03-25T21:40:37.862Z] [INFO] Client environment:java.version=11.0.8
+[2024-03-25T21:40:37.862Z] [INFO] Client environment:java.vendor=AdoptOpenJDK
+[2024-03-25T21:40:37.862Z] [INFO] Client environment:java.home=/opt/java/openjdk
+[2024-03-25T21:40:37.862Z] [INFO] Client environment:java.class.path=/invoker/classes:/invoker/lib/openwhisk-invoker-1.0.0-SNAPSHOT.jar:/invoker/lib/openwhisk-common-1.0.0-SNAPSHOT.jar:/invoker/lib/pureconfig_2.12-0.11.1.jar:/invoker/lib/mesos-actor-0.0.17.jar:/invoker/lib/akka-management-cluster-bootstrap_2.12-0.10.0.jar:/invoker/lib/akka-discovery-marathon-api_2.12-0.10.0.jar:/invoker/lib/akka-management_2.12-0.10.0.jar:/invoker/lib/akka-http-spray-json_2.12-10.1.11.jar:/invoker/lib/spray-json_2.12-1.3.5.jar:/invoker/lib/akka-stream-alpakka-file_2.12-1.1.2.jar:/invoker/lib/akka-stream-alpakka-s3_2.12-1.1.2.jar:/invoker/lib/akka-stream-alpakka-simple-codecs_2.12-0.9.jar:/invoker/lib/akka-cluster-metrics_2.12-2.5.26.jar:/invoker/lib/akka-cluster-tools_2.12-2.5.26.jar:/invoker/lib/akka-distributed-data_2.12-2.5.26.jar:/invoker/lib/akka-cluster_2.12-2.5.26.jar:/invoker/lib/akka-remote_2.12-2.5.26.jar:/invoker/lib/akka-stream_2.12-2.5.26.jar:/invoker/lib/akka-slf4j_2.12-2.5.26.jar:/invoker/lib/akka-discovery_2.12-0.10.0.jar:/invoker/lib/akka-coordination_2.12-2.5.26.jar:/invoker/lib/akka-actor_2.12-2.5.26.jar:/invoker/lib/akka-http-xml_2.12-10.1.11.jar:/invoker/lib/akka-http_2.12-10.1.11.jar:/invoker/lib/akka-http-core_2.12-10.1.11.jar:/invoker/lib/kamon-statsd_2.12-2.0.0.jar:/invoker/lib/kamon-system-metrics_2.12-2.0.1.jar:/invoker/lib/kamon-prometheus_2.12-2.0.1.jar:/invoker/lib/kamon-datadog_2.12-2.0.1.jar:/invoker/lib/elastic4s-http_2.12-6.7.4.jar:/invoker/lib/pureconfig-generic_2.12-0.11.1.jar:/invoker/lib/pureconfig-core_2.12-0.11.1.jar:/invoker/lib/fastparse_2.12-2.1.3.jar:/invoker/lib/sourcecode_2.12-0.1.7.jar:/invoker/lib/scala-java8-compat_2.12-0.8.0.jar:/invoker/lib/ssl-config-core_2.12-0.3.8.jar:/invoker/lib/akka-protobuf_2.12-2.5.26.jar:/invoker/lib/akka-parsing_2.12-10.1.11.jar:/invoker/lib/kamon-core_2.12-2.0.4.jar:/invoker/lib/play-json_2.12-2.7.4.jar:/invoker/lib/elastic4s-core_2.12-6.7.4.jar:/invoker/lib/exts_2.12-1.61.1.jar:/invoker/lib/jackson-module-scala_2.12-2.10.0.jar:/invoker/lib/pureconfig-macros_2.12-0.11.1.jar:/invoker/lib/shapeless_2.12-2.3.3.jar:/invoker/lib/scala-parser-combinators_2.12-1.1.2.jar:/invoker/lib/play-functional_2.12-2.7.4.jar:/invoker/lib/scala-reflect-2.12.8.jar:/invoker/lib/scala-xml_2.12-1.2.0.jar:/invoker/lib/macro-compat_2.12-1.1.1.jar:/invoker/lib/scala-library-2.12.10.jar:/invoker/lib/curator-recipes-4.0.0.jar:/invoker/lib/zookeeper-3.4.11.jar:/invoker/lib/logback-classic-1.2.3.jar:/invoker/lib/jcl-over-slf4j-1.7.25.jar:/invoker/lib/log4j-over-slf4j-1.7.25.jar:/invoker/lib/elasticsearch-rest-client-6.7.2.jar:/invoker/lib/aws-java-sdk-cloudfront-1.11.517.jar:/invoker/lib/aws-java-sdk-core-1.11.517.jar:/invoker/lib/httpclient-4.5.5.jar:/invoker/lib/commons-codec-1.10.jar:/invoker/lib/azure-cosmosdb-2.6.2.jar:/invoker/lib/azure-cosmosdb-direct-2.6.2.jar:/invoker/lib/azure-cosmosdb-gateway-2.6.2.jar:/invoker/lib/azure-cosmosdb-commons-2.6.2.jar:/invoker/lib/commons-io-2.6.jar:/invoker/lib/commons-collections-3.2.2.jar:/invoker/lib/kafka-clients-2.4.0.jar:/invoker/lib/java-uuid-generator-3.1.4.jar:/invoker/lib/caffeine-2.6.2.jar:/invoker/lib/protobuf-java-util-3.3.1.jar:/invoker/lib/curator-framework-4.0.0.jar:/invoker/lib/curator-client-4.0.0.jar:/invoker/lib/guava-27.0.1-jre.jar:/invoker/lib/jsr305-3.0.2.jar:/invoker/lib/kubernetes-client-4.4.2.jar:/invoker/lib/opentracing-util-0.31.0.jar:/invoker/lib/brave-opentracing-0.31.0.jar:/invoker/lib/opentracing-noop-0.31.0.jar:/invoker/lib/opentracing-api-0.31.0.jar:/invoker/lib/zipkin-sender-okhttp3-2.6.1.jar:/invoker/lib/brave-5.0.0.jar:/invoker/lib/zipkin-reporter-2.6.1.jar:/invoker/lib/rxjava-reactive-streams-1.2.1.jar:/invoker/lib/rxjava-extras-0.8.0.17.jar:/invoker/lib/rxjava-string-1.1.1.jar:/invoker/lib/rxnetty-0.4.20.jar:/invoker/lib/rxjava-1.3.8.jar:/invoker/lib/azure-storage-blob-12.6.0.jar:/invoker/lib/audience-annotations-0.5.0.jar:/invoker/lib/netty-3.10.6.Final.jar:/invoker/lib/config-1.3.4.jar:/invoker/lib/azure-storage-common-12.6.0.jar:/invoker/lib/azure-core-http-netty-1.5.0.jar:/invoker/lib/azure-core-1.4.0.jar:/invoker/lib/reactor-netty-0.9.5.RELEASE.jar:/invoker/lib/reactor-core-3.3.3.RELEASE.jar:/invoker/lib/reactive-streams-1.0.3.jar:/invoker/lib/jul-to-slf4j-1.7.26.jar:/invoker/lib/oshi-core-4.2.1.jar:/invoker/lib/metrics-core-4.1.0.jar:/invoker/lib/slf4j-api-1.7.29.jar:/invoker/lib/logback-core-1.2.3.jar:/invoker/lib/zstd-jni-1.4.3-1.jar:/invoker/lib/lz4-java-1.6.0.jar:/invoker/lib/snappy-java-1.1.7.3.jar:/invoker/lib/httpcore-4.4.9.jar:/invoker/lib/kubernetes-model-4.4.2.jar:/invoker/lib/logging-interceptor-3.12.0.jar:/invoker/lib/okhttp-3.12.0.jar:/invoker/lib/jackson-dataformat-yaml-2.9.9.jar:/invoker/lib/zjsonpatch-0.3.0.jar:/invoker/lib/jmespath-java-1.11.517.jar:/invoker/lib/jackson-datatype-jdk8-2.9.8.jar:/invoker/lib/jackson-module-paranamer-2.10.0.jar:/invoker/lib/jackson-datatype-jsr310-2.10.1.jar:/invoker/lib/jackson-dataformat-xml-2.10.1.jar:/invoker/lib/jackson-module-jaxb-annotations-2.10.1.jar:/invoker/lib/jackson-databind-2.10.1.jar:/invoker/lib/jackson-dataformat-cbor-2.6.7.jar:/invoker/lib/jackson-core-2.10.1.jar:/invoker/lib/generex-1.0.2.jar:/invoker/lib/nanohttpd-2.3.1.jar:/invoker/lib/mesos-1.2.3.jar:/invoker/lib/zipkin-2.8.4.jar:/invoker/lib/netty-handler-proxy-4.1.45.Final.jar:/invoker/lib/netty-codec-http2-4.1.45.Final.jar:/invoker/lib/netty-codec-http-4.1.45.Final.jar:/invoker/lib/netty-handler-4.1.45.Final.jar:/invoker/lib/netty-transport-native-epoll-4.1.45.Final-linux-x86_64.jar:/invoker/lib/netty-transport-native-unix-common-4.1.45.Final.jar:/invoker/lib/netty-codec-socks-4.1.45.Final.jar:/invoker/lib/netty-codec-4.1.45.Final.jar:/invoker/lib/netty-transport-4.1.45.Final.jar:/invoker/lib/commons-text-1.6.jar:/invoker/lib/commons-lang3-3.8.1.jar:/invoker/lib/kubernetes-model-common-4.4.2.jar:/invoker/lib/validation-api-2.0.1.Final.jar:/invoker/lib/javax.el-3.0.1-b11.jar:/invoker/lib/okio-1.15.0.jar:/invoker/lib/snakeyaml-1.23.jar:/invoker/lib/automaton-1.11-8.jar:/invoker/lib/jna-platform-5.5.0.jar:/invoker/lib/jna-5.5.0.jar:/invoker/lib/joda-time-2.10.1.jar:/invoker/lib/jackson-annotations-2.10.1.jar:/invoker/lib/protobuf-java-3.3.1.jar:/invoker/lib/gson-2.7.jar:/invoker/lib/aeron-driver-1.15.1.jar:/invoker/lib/aeron-client-1.15.1.jar:/invoker/lib/lmdbjava-0.6.1.jar:/invoker/lib/commons-collections4-4.2.jar:/invoker/lib/micrometer-core-1.2.0.jar:/invoker/lib/netty-buffer-4.1.45.Final.jar:/invoker/lib/netty-resolver-4.1.45.Final.jar:/invoker/lib/netty-common-4.1.45.Final.jar:/invoker/lib/httpasyncclient-4.1.2.jar:/invoker/lib/httpcore-nio-4.4.5.jar:/invoker/lib/ion-java-1.0.2.jar:/invoker/lib/netty-tcnative-boringssl-static-2.0.27.Final.jar:/invoker/lib/agrona-0.9.31.jar:/invoker/lib/jnr-ffi-2.1.7.jar:/invoker/lib/jnr-constants-0.9.9.jar:/invoker/lib/failureaccess-1.0.1.jar:/invoker/lib/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/invoker/lib/checker-qual-2.5.2.jar:/invoker/lib/error_prone_annotations-2.2.0.jar:/invoker/lib/j2objc-annotations-1.1.jar:/invoker/lib/animal-sniffer-annotations-1.17.jar:/invoker/lib/HdrHistogram-2.1.11.jar:/invoker/lib/LatencyUtils-2.0.3.jar:/invoker/lib/paranamer-2.8.jar:/invoker/lib/woodstox-core-6.0.2.jar:/invoker/lib/stax2-api-4.2.jar:/invoker/lib/jffi-1.2.16.jar:/invoker/lib/jffi-1.2.16-native.jar:/invoker/lib/asm-commons-5.0.3.jar:/invoker/lib/asm-analysis-5.0.3.jar:/invoker/lib/asm-util-5.0.3.jar:/invoker/lib/asm-tree-5.0.3.jar:/invoker/lib/asm-5.0.3.jar:/invoker/lib/jnr-x86asm-1.0.2.jar:/invoker/lib/jakarta.xml.bind-api-2.3.2.jar:/invoker/lib/jakarta.activation-api-1.2.1.jar:/invoker/ext-lib/*:/invoker/config
+[2024-03-25T21:40:37.862Z] [INFO] Client environment:java.library.path=/opt/java/openjdk/lib/compressedrefs:/opt/java/openjdk/lib:/usr/lib64:/usr/lib
+[2024-03-25T21:40:37.862Z] [INFO] Client environment:java.io.tmpdir=/tmp
+[2024-03-25T21:40:37.862Z] [INFO] Client environment:java.compiler=j9jit29
+[2024-03-25T21:40:37.862Z] [INFO] Client environment:os.name=Linux
+[2024-03-25T21:40:37.862Z] [INFO] Client environment:os.arch=amd64
+[2024-03-25T21:40:37.862Z] [INFO] Client environment:os.version=5.15.0-101-generic
+[2024-03-25T21:40:37.862Z] [INFO] Client environment:user.name=root
+[2024-03-25T21:40:37.862Z] [INFO] Client environment:user.home=/root
+[2024-03-25T21:40:37.862Z] [INFO] Client environment:user.dir=/
+[2024-03-25T21:40:37.862Z] [INFO] Initiating client connection, connectString=owdev-zookeeper-0.owdev-zookeeper.openwhisk.svc.cluster.local:2181 sessionTimeout=60000 watcher=org.apache.curator.ConnectionState@3f2dcd49
+[2024-03-25T21:40:37.881Z] [INFO] Default schema
+[2024-03-25T21:40:37.886Z] [INFO] Opening socket connection to server owdev-zookeeper-0.owdev-zookeeper.openwhisk.svc.cluster.local/10.244.19.45:2181. Will not attempt to authenticate using SASL (unknown error)
+[2024-03-25T21:40:37.896Z] [INFO] Socket connection established to owdev-zookeeper-0.owdev-zookeeper.openwhisk.svc.cluster.local/10.244.19.45:2181, initiating session
+[2024-03-25T21:40:37.905Z] [INFO] Session establishment complete on server owdev-zookeeper-0.owdev-zookeeper.openwhisk.svc.cluster.local/10.244.19.45:2181, sessionid = 0x10002cb1e790006, negotiated timeout = 40000
+[2024-03-25T21:40:37.916Z] [INFO] State change: CONNECTED
+[2024-03-25T21:40:37.917Z] [INFO] [#tid_sid_unknown] [InstanceIdAssigner] invokerReg: connected to zookeeper
+[2024-03-25T21:40:37.942Z] [INFO] [#tid_sid_unknown] [InstanceIdAssigner] invokerReg: no prior assignment of id for invoker owdev-invoker-5
+[2024-03-25T21:40:37.987Z] [INFO] [#tid_sid_unknown] [InstanceIdAssigner] invokerReg: invoker owdev-invoker-5 was assigned invokerId 5
+[2024-03-25T21:40:37.988Z] [INFO] backgroundOperationsLoop exiting
+[2024-03-25T21:40:37.993Z] [INFO] Session: 0x10002cb1e790006 closed
+[2024-03-25T21:40:37.994Z] [INFO] EventThread shut down for session: 0x10002cb1e790006
+[2024-03-25T21:40:38.078Z] [WARN] Failed to attach the instrumentation because the Kamon Bundle is not present on the classpath
+[2024-03-25T21:40:38.209Z] [INFO] Started the Kamon StatsD reporter
+[2024-03-25T21:40:38.939Z] [INFO] [#tid_sid_unknown] [KafkaMessagingProvider] created topic invoker5
+[2024-03-25T21:40:39.112Z] [INFO] [#tid_sid_unknown] [InvokerReactive] LogStoreProvider: class org.apache.openwhisk.core.containerpool.logging.DockerToActivationLogStore
+[2024-03-25T21:40:39.568Z] [INFO] [#tid_sid_unknown] [KubernetesContainerFactory] Cleaning up function runtimes
+[2024-03-25T21:40:39.573Z] [INFO] [#tid_sid_invokerNanny] [KubernetesClient] Deleting pods with label Map(invoker -> invoker5, release -> owdev) [marker:invoker_kubeapi.delete_start:2097]
+[2024-03-25T21:40:40.571Z] [INFO] [#tid_sid_invokerNanny] [KubernetesClient]  [marker:invoker_kubeapi.delete_finish:3094:947]
+[2024-03-25T21:40:41.401Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:3925]
+[2024-03-25T21:40:41.763Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:4287:362]
+[2024-03-25T21:40:41.766Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-25T21:40:41.778Z] [INFO] [#tid_sid_dispatcher] [MessageFeed] handler capacity = 156, pipeline fill at = 156, pipeline depth = 312
+[2024-03-25T21:40:41.839Z] [INFO] [#tid_sid_invokerWarmup] [ContainerPool] found 0 started and 0 starting; initing 2 pre-warms to desired count: 2 for kind:nodejs:10 mem:256 MB
+[2024-03-25T21:40:42.218Z] [INFO] [#tid_sid_invokerWarmup] [KubernetesClient] launching pod wskowdev-invoker-55-1-prewarm-nodejs10 (image:openwhisk/action-nodejs-v10:1.16.0, mem: 256) (timeout: 60s) [marker:invoker_kubeapi.create_start:4741]
+[2024-03-25T21:40:42.220Z] [INFO] [#tid_sid_invokerWarmup] [KubernetesClient] launching pod wskowdev-invoker-55-2-prewarm-nodejs10 (image:openwhisk/action-nodejs-v10:1.16.0, mem: 256) (timeout: 60s) [marker:invoker_kubeapi.create_start:4743]
+[2024-03-25T21:40:42.269Z] [INFO] [#tid_sid_invokerHealth] [InvokerReactive]  [marker:invoker_activation_start:27110]
+[2024-03-25T21:40:42.276Z] [WARN] [#tid_sid_invokerHealth] [InvokerReactive] revision was not provided for whisk.system/invokerHealthTestAction0
+[2024-03-25T21:40:42.472Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore] [GET] 'test_whisks' finding document: 'id: whisk.system/invokerHealthTestAction0' [marker:database_getDocument_start:27313]
+[2024-03-25T21:40:42.496Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore]  [marker:database_getDocument_finish:27338:24]
+[2024-03-25T21:40:42.590Z] [INFO] [#tid_sid_invokerHealth] [ContainerPool] containerStart containerState: cold container: None activations: 1 of max 1 action: invokerHealthTestAction0 namespace: whisk.system activationId: e2cfa39c9de34fa48fa39c9de32fa4ac [marker:invoker_containerStart.cold_counter:27431]
+[2024-03-25T21:40:42.591Z] [INFO] [#tid_sid_invokerHealth] [KubernetesClient] launching pod wskowdev-invoker-55-3-whisksystem-invokerhealthtestaction0 (image:openwhisk/action-nodejs-v10:1.16.0, mem: 128) (timeout: 60s) [marker:invoker_kubeapi.create_start:27433]
+[2024-03-25T21:40:57.780Z] [INFO] [#tid_sid_invokerWarmup] [KubernetesClient]  [marker:invoker_kubeapi.create_finish:20304:15560]
+[2024-03-25T21:41:02.932Z] [INFO] [#tid_sid_invokerWarmup] [KubernetesClient]  [marker:invoker_kubeapi.create_finish:25455:20714]
+[2024-03-25T21:41:03.239Z] [INFO] [#tid_sid_invokerHealth] [KubernetesClient]  [marker:invoker_kubeapi.create_finish:48080:20647]
+[2024-03-25T21:41:03.503Z] [INFO] [#tid_sid_invokerHealth] [KubernetesContainer] sending initialization to ContainerId(wskowdev-invoker-55-3-whisksystem-invokerhealthtestaction0) ContainerAddress(10.244.11.188,8080) [marker:invoker_activationInit_start:48345]
+[2024-03-25T21:41:03.783Z] [INFO] [#tid_sid_invokerHealth] [KubernetesContainer] initialization result: ok [marker:invoker_activationInit_finish:48625:277]
+[2024-03-25T21:41:03.787Z] [INFO] [#tid_sid_unknown] [ContainerProxy] resending up to 0 from 0 buffered jobs
+[2024-03-25T21:41:03.788Z] [INFO] [#tid_sid_invokerHealth] [KubernetesContainer] sending arguments to /whisk.system/invokerHealthTestAction0 at ContainerId(wskowdev-invoker-55-3-whisksystem-invokerhealthtestaction0) ContainerAddress(10.244.11.188,8080) [marker:invoker_activationRun_start:48630]
+[2024-03-25T21:41:03.801Z] [INFO] [#tid_sid_invokerHealth] [KubernetesContainer] running result: ok [marker:invoker_activationRun_finish:48643:11]
+[2024-03-25T21:41:03.810Z] [INFO] [#tid_sid_invokerHealth] [ContainerProxy]  [marker:invoker_collectLogs_start:48652]
+[2024-03-25T21:41:03.913Z] [INFO] [#tid_sid_invokerHealth] [ContainerProxy]  [marker:invoker_collectLogs_finish:48755:103]
+[2024-03-25T21:41:03.921Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore] [PUT] 'test_activations' saving document: 'id: whisk.system/e2cfa39c9de34fa48fa39c9de32fa4ac, rev: null' [marker:database_saveDocument_start:48763]
+[2024-03-25T21:41:03.928Z] [INFO] [#tid_sid_dbBatcher] [CouchDbRestStore] 'test_activations' saving 1 documents [marker:database_saveDocumentBulk_start:26452]
+[2024-03-25T21:41:03.957Z] [INFO] [#tid_sid_invokerHealth] [MessagingActiveAck] posted completion of activation e2cfa39c9de34fa48fa39c9de32fa4ac
+[2024-03-25T21:41:03.978Z] [INFO] [#tid_sid_invokerHealth] [InvokerReactive]  [marker:invoker_activation_start:48820]
+[2024-03-25T21:41:03.978Z] [WARN] [#tid_sid_invokerHealth] [InvokerReactive] revision was not provided for whisk.system/invokerHealthTestAction0
+[2024-03-25T21:41:03.979Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore] [GET] 'test_whisks' finding document: 'id: whisk.system/invokerHealthTestAction0' [marker:database_getDocument_start:48820]
+[2024-03-25T21:41:03.981Z] [INFO] [#tid_sid_dbBatcher] [CouchDbRestStore]  [marker:database_saveDocumentBulk_finish:26505:53]
+[2024-03-25T21:41:03.994Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore]  [marker:database_saveDocument_finish:48836:73]
+[2024-03-25T21:41:03.994Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore]  [marker:database_getDocument_finish:48836:16]
+[2024-03-25T21:41:03.997Z] [INFO] [#tid_sid_invokerHealth] [ContainerPool] containerStart containerState: warmed container: Some(ContainerId(wskowdev-invoker-55-3-whisksystem-invokerhealthtestaction0)) activations: 1 of max 1 action: invokerHealthTestAction0 namespace: whisk.system activationId: 426f5d806c36403aaf5d806c36403a90 [marker:invoker_containerStart.warmed_counter:48839]
+[2024-03-25T21:41:03.999Z] [INFO] [#tid_sid_invokerHealth] [KubernetesContainer] sending arguments to /whisk.system/invokerHealthTestAction0 at ContainerId(wskowdev-invoker-55-3-whisksystem-invokerhealthtestaction0) ContainerAddress(10.244.11.188,8080) [marker:invoker_activationRun_start:48841]
+[2024-03-25T21:41:04.008Z] [INFO] [#tid_sid_invokerHealth] [KubernetesContainer] running result: ok [marker:invoker_activationRun_finish:48850:8]
+[2024-03-25T21:41:04.009Z] [INFO] [#tid_sid_invokerHealth] [ContainerProxy]  [marker:invoker_collectLogs_start:48850]
+[2024-03-25T21:41:04.032Z] [INFO] [#tid_sid_invokerHealth] [ContainerProxy]  [marker:invoker_collectLogs_finish:48874:24]
+[2024-03-25T21:41:04.034Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore] [PUT] 'test_activations' saving document: 'id: whisk.system/426f5d806c36403aaf5d806c36403a90, rev: null' [marker:database_saveDocument_start:48875]
+[2024-03-25T21:41:04.035Z] [INFO] [#tid_sid_dbBatcher] [CouchDbRestStore] 'test_activations' saving 1 documents [marker:database_saveDocumentBulk_start:26558]
+[2024-03-25T21:41:04.041Z] [INFO] [#tid_sid_invokerHealth] [MessagingActiveAck] posted completion of activation 426f5d806c36403aaf5d806c36403a90
+[2024-03-25T21:41:04.058Z] [INFO] [#tid_sid_dbBatcher] [CouchDbRestStore]  [marker:database_saveDocumentBulk_finish:26582:23]
+[2024-03-25T21:41:04.059Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore]  [marker:database_saveDocument_finish:48900:24]
+[2024-03-25T21:45:41.421Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:303944]
+[2024-03-25T21:45:41.502Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:304026:82]
+[2024-03-25T21:45:41.503Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-25T21:50:41.441Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:603964]
+[2024-03-25T21:50:41.514Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:604037:72]
+[2024-03-25T21:50:41.515Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-25T21:51:04.128Z] [INFO] [#tid_sid_invokerNanny] [KubernetesClient] Deleting pod wskowdev-invoker-55-3-whisksystem-invokerhealthtestaction0 [marker:invoker_kubeapi.delete_start:626651]
+[2024-03-25T21:51:04.279Z] [INFO] [#tid_sid_invokerNanny] [KubernetesClient]  [marker:invoker_kubeapi.delete_finish:626803:152]
+[2024-03-25T21:55:41.461Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:903984]
+[2024-03-25T21:55:41.543Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:904067:82]
+[2024-03-25T21:55:41.544Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-25T22:00:13.158Z] [INFO] [#tid_sid_invokerHealth] [InvokerReactive]  [marker:invoker_activation_start:1198000]
+[2024-03-25T22:00:13.159Z] [WARN] [#tid_sid_invokerHealth] [InvokerReactive] revision was not provided for whisk.system/invokerHealthTestAction0
+[2024-03-25T22:00:13.160Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore] [GET] 'test_whisks' finding document: 'id: whisk.system/invokerHealthTestAction0' [marker:database_getDocument_start:1198001]
+[2024-03-25T22:00:13.225Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore]  [marker:database_getDocument_finish:1198067:66]
+[2024-03-25T22:00:13.303Z] [INFO] [#tid_sid_invokerHealth] [ContainerPool] containerStart containerState: cold container: None activations: 1 of max 1 action: invokerHealthTestAction0 namespace: whisk.system activationId: c4525a9cb8e0453b925a9cb8e0453b45 [marker:invoker_containerStart.cold_counter:1198140]
+[2024-03-25T22:00:13.307Z] [INFO] [#tid_sid_invokerHealth] [KubernetesClient] launching pod wskowdev-invoker-55-4-whisksystem-invokerhealthtestaction0 (image:openwhisk/action-nodejs-v10:1.16.0, mem: 128) (timeout: 60s) [marker:invoker_kubeapi.create_start:1198148]
+[2024-03-25T22:00:25.335Z] [INFO] [#tid_sid_invokerHealth] [KubernetesClient]  [marker:invoker_kubeapi.create_finish:1210176:12026]
+[2024-03-25T22:00:25.389Z] [INFO] [#tid_sid_invokerHealth] [KubernetesContainer] sending initialization to ContainerId(wskowdev-invoker-55-4-whisksystem-invokerhealthtestaction0) ContainerAddress(10.244.26.61,8080) [marker:invoker_activationInit_start:1210230]
+[2024-03-25T22:00:25.437Z] [INFO] [#tid_sid_invokerHealth] [KubernetesContainer] initialization result: ok [marker:invoker_activationInit_finish:1210278:47]
+[2024-03-25T22:00:25.438Z] [INFO] [#tid_sid_unknown] [ContainerProxy] resending up to 0 from 0 buffered jobs
+[2024-03-25T22:00:25.438Z] [INFO] [#tid_sid_invokerHealth] [KubernetesContainer] sending arguments to /whisk.system/invokerHealthTestAction0 at ContainerId(wskowdev-invoker-55-4-whisksystem-invokerhealthtestaction0) ContainerAddress(10.244.26.61,8080) [marker:invoker_activationRun_start:1210279]
+[2024-03-25T22:00:25.447Z] [INFO] [#tid_sid_invokerHealth] [KubernetesContainer] running result: ok [marker:invoker_activationRun_finish:1210288:7]
+[2024-03-25T22:00:25.449Z] [INFO] [#tid_sid_invokerHealth] [ContainerProxy]  [marker:invoker_collectLogs_start:1210290]
+[2024-03-25T22:00:25.480Z] [INFO] [#tid_sid_invokerHealth] [ContainerProxy]  [marker:invoker_collectLogs_finish:1210321:30]
+[2024-03-25T22:00:25.483Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore] [PUT] 'test_activations' saving document: 'id: whisk.system/c4525a9cb8e0453b925a9cb8e0453b45, rev: null' [marker:database_saveDocument_start:1210324]
+[2024-03-25T22:00:25.485Z] [INFO] [#tid_sid_dbBatcher] [CouchDbRestStore] 'test_activations' saving 1 documents [marker:database_saveDocumentBulk_start:1188008]
+[2024-03-25T22:00:25.499Z] [INFO] [#tid_sid_invokerHealth] [MessagingActiveAck] posted completion of activation c4525a9cb8e0453b925a9cb8e0453b45
+[2024-03-25T22:00:25.518Z] [INFO] [#tid_sid_invokerHealth] [InvokerReactive]  [marker:invoker_activation_start:1210359]
+[2024-03-25T22:00:25.520Z] [WARN] [#tid_sid_invokerHealth] [InvokerReactive] revision was not provided for whisk.system/invokerHealthTestAction0
+[2024-03-25T22:00:25.520Z] [INFO] [#tid_sid_dbBatcher] [CouchDbRestStore]  [marker:database_saveDocumentBulk_finish:1188044:36]
+[2024-03-25T22:00:25.522Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore] [GET] 'test_whisks' finding document: 'id: whisk.system/invokerHealthTestAction0' [marker:database_getDocument_start:1210363]
+[2024-03-25T22:00:25.523Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore]  [marker:database_saveDocument_finish:1210363:39]
+[2024-03-25T22:00:25.539Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore]  [marker:database_getDocument_finish:1210381:16]
+[2024-03-25T22:00:25.542Z] [INFO] [#tid_sid_invokerHealth] [ContainerPool] containerStart containerState: warmed container: Some(ContainerId(wskowdev-invoker-55-4-whisksystem-invokerhealthtestaction0)) activations: 1 of max 1 action: invokerHealthTestAction0 namespace: whisk.system activationId: cab100992ba847f6b100992ba827f6f9 [marker:invoker_containerStart.warmed_counter:1210383]
+[2024-03-25T22:00:25.543Z] [INFO] [#tid_sid_invokerHealth] [KubernetesContainer] sending arguments to /whisk.system/invokerHealthTestAction0 at ContainerId(wskowdev-invoker-55-4-whisksystem-invokerhealthtestaction0) ContainerAddress(10.244.26.61,8080) [marker:invoker_activationRun_start:1210385]
+[2024-03-25T22:00:25.552Z] [INFO] [#tid_sid_invokerHealth] [KubernetesContainer] running result: ok [marker:invoker_activationRun_finish:1210393:7]
+[2024-03-25T22:00:25.553Z] [INFO] [#tid_sid_invokerHealth] [ContainerProxy]  [marker:invoker_collectLogs_start:1210394]
+[2024-03-25T22:00:25.584Z] [INFO] [#tid_sid_invokerHealth] [ContainerProxy]  [marker:invoker_collectLogs_finish:1210424:29]
+[2024-03-25T22:00:25.588Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore] [PUT] 'test_activations' saving document: 'id: whisk.system/cab100992ba847f6b100992ba827f6f9, rev: null' [marker:database_saveDocument_start:1210428]
+[2024-03-25T22:00:25.588Z] [INFO] [#tid_sid_dbBatcher] [CouchDbRestStore] 'test_activations' saving 1 documents [marker:database_saveDocumentBulk_start:1188111]
+[2024-03-25T22:00:25.594Z] [INFO] [#tid_sid_invokerHealth] [MessagingActiveAck] posted completion of activation cab100992ba847f6b100992ba827f6f9
+[2024-03-25T22:00:25.617Z] [INFO] [#tid_sid_dbBatcher] [CouchDbRestStore]  [marker:database_saveDocumentBulk_finish:1188140:27]
+[2024-03-25T22:00:25.618Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore]  [marker:database_saveDocument_finish:1210460:32]
+[2024-03-25T22:00:41.481Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:1204004]
+[2024-03-25T22:00:41.507Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:1204031:26]
+[2024-03-25T22:00:41.507Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-25T22:05:41.501Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:1504024]
+[2024-03-25T22:05:41.570Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:1504094:69]
+[2024-03-25T22:05:41.570Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-25T22:08:30.176Z] [INFO] [#tid_sid_invokerHealth] [InvokerReactive]  [marker:invoker_activation_start:1695017]
+[2024-03-25T22:08:30.178Z] [WARN] [#tid_sid_invokerHealth] [InvokerReactive] revision was not provided for whisk.system/invokerHealthTestAction0
+[2024-03-25T22:08:30.178Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore] [GET] 'test_whisks' finding document: 'id: whisk.system/invokerHealthTestAction0' [marker:database_getDocument_start:1695018]
+[2024-03-25T22:08:47.834Z] [INFO] Message [akka.io.Dns$Resolved] from Actor[akka://invoker-actor-system/system/IO-DNS/inet-address/$d#1052722845] to Actor[akka://invoker-actor-system/system/IO-TCP/selectors/$a/7#1547673023] was not delivered. [1] dead letters encountered. If this is not an expected behavior, then [Actor[akka://invoker-actor-system/system/IO-TCP/selectors/$a/7#1547673023]] may have terminated unexpectedly, This logging can be turned off or adjusted with configuration settings 'akka.log-dead-letters' and 'akka.log-dead-letters-during-shutdown'.
+[2024-03-25T22:08:47.865Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore]  [marker:database_getDocument_finish:1712707:17688]
+[2024-03-25T22:08:47.869Z] [INFO] [#tid_sid_invokerHealth] [ContainerPool] containerStart containerState: warmed container: Some(ContainerId(wskowdev-invoker-55-4-whisksystem-invokerhealthtestaction0)) activations: 1 of max 1 action: invokerHealthTestAction0 namespace: whisk.system activationId: 1a457d6a88cf42c8857d6a88cf02c875 [marker:invoker_containerStart.warmed_counter:1712711]
+[2024-03-25T22:08:47.875Z] [INFO] [#tid_sid_invokerHealth] [KubernetesContainer] sending arguments to /whisk.system/invokerHealthTestAction0 at ContainerId(wskowdev-invoker-55-4-whisksystem-invokerhealthtestaction0) ContainerAddress(10.244.26.61,8080) [marker:invoker_activationRun_start:1712716]
+[2024-03-25T22:08:47.894Z] [INFO] [#tid_sid_invokerHealth] [KubernetesContainer] running result: ok [marker:invoker_activationRun_finish:1712732:14]
+[2024-03-25T22:08:47.894Z] [INFO] [#tid_sid_invokerHealth] [ContainerProxy]  [marker:invoker_collectLogs_start:1712733]
+[2024-03-25T22:08:47.992Z] [INFO] [#tid_sid_invokerHealth] [ContainerProxy]  [marker:invoker_collectLogs_finish:1712831:98]
+[2024-03-25T22:08:47.992Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore] [PUT] 'test_activations' saving document: 'id: whisk.system/1a457d6a88cf42c8857d6a88cf02c875, rev: null' [marker:database_saveDocument_start:1712833]
+[2024-03-25T22:08:47.993Z] [INFO] [#tid_sid_dbBatcher] [CouchDbRestStore] 'test_activations' saving 1 documents [marker:database_saveDocumentBulk_start:1690516]
+[2024-03-25T22:08:48.004Z] [INFO] [#tid_sid_invokerHealth] [MessagingActiveAck] posted completion of activation 1a457d6a88cf42c8857d6a88cf02c875
+[2024-03-25T22:08:48.027Z] [INFO] [#tid_sid_dbBatcher] [CouchDbRestStore]  [marker:database_saveDocumentBulk_finish:1690551:35]
+[2024-03-25T22:08:48.028Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore]  [marker:database_saveDocument_finish:1712870:37]
+[2024-03-25T22:08:48.220Z] [INFO] [#tid_sid_invokerHealth] [InvokerReactive]  [marker:invoker_activation_start:1713062]
+[2024-03-25T22:08:48.221Z] [WARN] [#tid_sid_invokerHealth] [InvokerReactive] revision was not provided for whisk.system/invokerHealthTestAction0
+[2024-03-25T22:08:48.221Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore] [GET] 'test_whisks' finding document: 'id: whisk.system/invokerHealthTestAction0' [marker:database_getDocument_start:1713063]
+[2024-03-25T22:08:48.237Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore]  [marker:database_getDocument_finish:1713079:16]
+[2024-03-25T22:08:48.239Z] [INFO] [#tid_sid_invokerHealth] [ContainerPool] containerStart containerState: warmed container: Some(ContainerId(wskowdev-invoker-55-4-whisksystem-invokerhealthtestaction0)) activations: 1 of max 1 action: invokerHealthTestAction0 namespace: whisk.system activationId: 5b714660a10b44e9b14660a10bb4e9f2 [marker:invoker_containerStart.warmed_counter:1713081]
+[2024-03-25T22:08:48.244Z] [INFO] [#tid_sid_invokerHealth] [KubernetesContainer] sending arguments to /whisk.system/invokerHealthTestAction0 at ContainerId(wskowdev-invoker-55-4-whisksystem-invokerhealthtestaction0) ContainerAddress(10.244.26.61,8080) [marker:invoker_activationRun_start:1713084]
+[2024-03-25T22:08:48.249Z] [INFO] [#tid_sid_invokerHealth] [KubernetesContainer] running result: ok [marker:invoker_activationRun_finish:1713090:5]
+[2024-03-25T22:08:48.250Z] [INFO] [#tid_sid_invokerHealth] [ContainerProxy]  [marker:invoker_collectLogs_start:1713091]
+[2024-03-25T22:08:48.276Z] [INFO] [#tid_sid_invokerHealth] [ContainerProxy]  [marker:invoker_collectLogs_finish:1713116:24]
+[2024-03-25T22:08:48.276Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore] [PUT] 'test_activations' saving document: 'id: whisk.system/5b714660a10b44e9b14660a10bb4e9f2, rev: null' [marker:database_saveDocument_start:1713117]
+[2024-03-25T22:08:48.277Z] [INFO] [#tid_sid_dbBatcher] [CouchDbRestStore] 'test_activations' saving 1 documents [marker:database_saveDocumentBulk_start:1690800]
+[2024-03-25T22:08:48.280Z] [INFO] [#tid_sid_invokerHealth] [MessagingActiveAck] posted completion of activation 5b714660a10b44e9b14660a10bb4e9f2
+[2024-03-25T22:08:48.306Z] [INFO] [#tid_sid_dbBatcher] [CouchDbRestStore]  [marker:database_saveDocumentBulk_finish:1690830:30]
+[2024-03-25T22:08:48.307Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore]  [marker:database_saveDocument_finish:1713149:32]
+[2024-03-25T22:10:41.522Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:1804044]
+[2024-03-25T22:10:41.589Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:1804113:68]
+[2024-03-25T22:10:41.590Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-25T22:15:41.551Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:2104074]
+[2024-03-25T22:15:41.617Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:2104141:67]
+[2024-03-25T22:15:41.619Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-25T22:18:48.367Z] [INFO] [#tid_sid_invokerNanny] [KubernetesClient] Deleting pod wskowdev-invoker-55-4-whisksystem-invokerhealthtestaction0 [marker:invoker_kubeapi.delete_start:2290890]
+[2024-03-25T22:18:48.456Z] [INFO] [#tid_sid_invokerNanny] [KubernetesClient]  [marker:invoker_kubeapi.delete_finish:2290980:89]
+[2024-03-25T22:20:41.571Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:2404094]
+[2024-03-25T22:20:41.639Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:2404161:67]
+[2024-03-25T22:20:41.640Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-25T22:25:41.593Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:2704113]
+[2024-03-25T22:25:41.685Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:2704208:94]
+[2024-03-25T22:25:41.685Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-25T22:30:41.611Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:3004134]
+[2024-03-25T22:30:41.679Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:3004202:67]
+[2024-03-25T22:30:41.679Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-25T22:35:41.631Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:3304154]
+[2024-03-25T22:35:41.707Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:3304231:76]
+[2024-03-25T22:35:41.708Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-25T22:40:41.651Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:3604174]
+[2024-03-25T22:40:41.723Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:3604246:71]
+[2024-03-25T22:40:41.723Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-25T22:41:14.527Z] [INFO] [#tid_sid_invokerHealth] [InvokerReactive]  [marker:invoker_activation_start:3659367]
+[2024-03-25T22:41:14.527Z] [WARN] [#tid_sid_invokerHealth] [InvokerReactive] revision was not provided for whisk.system/invokerHealthTestAction0
+[2024-03-25T22:41:14.527Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore] [GET] 'test_whisks' finding document: 'id: whisk.system/invokerHealthTestAction0' [marker:database_getDocument_start:3659368]
+[2024-03-25T22:41:34.701Z] [INFO] Message [akka.io.Dns$Resolved] from Actor[akka://invoker-actor-system/system/IO-DNS/inet-address/$d#1052722845] to Actor[akka://invoker-actor-system/system/IO-TCP/selectors/$a/17#1995611336] was not delivered. [2] dead letters encountered. If this is not an expected behavior, then [Actor[akka://invoker-actor-system/system/IO-TCP/selectors/$a/17#1995611336]] may have terminated unexpectedly, This logging can be turned off or adjusted with configuration settings 'akka.log-dead-letters' and 'akka.log-dead-letters-during-shutdown'.
+[2024-03-25T22:41:36.771Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore]  [marker:database_getDocument_finish:3681613:22245]
+[2024-03-25T22:41:36.823Z] [INFO] [#tid_sid_invokerHealth] [KubernetesClient] launching pod wskowdev-invoker-55-5-whisksystem-invokerhealthtestaction0 (image:openwhisk/action-nodejs-v10:1.16.0, mem: 128) (timeout: 60s) [marker:invoker_kubeapi.create_start:3681665]
+[2024-03-25T22:41:36.827Z] [INFO] [#tid_sid_invokerHealth] [ContainerPool] containerStart containerState: cold container: None activations: 1 of max 1 action: invokerHealthTestAction0 namespace: whisk.system activationId: f53b6f5e732341d3bb6f5e732381d305 [marker:invoker_containerStart.cold_counter:3681669]
+[2024-03-25T22:41:48.625Z] [ERROR] [#tid_sid_invokerHealth] [KubernetesClient] Failed create pod for 'wskowdev-invoker-55-5-whisksystem-invokerhealthtestaction0': class io.fabric8.kubernetes.client.KubernetesClientException - An error has occurred. [marker:invoker_kubeapi.create_error:3693462:11796]
+[2024-03-25T22:41:51.432Z] [INFO] [#tid_sid_invokerHealth] [KubernetesContainer] Deleting failed pod 'wskowdev-invoker-55-5-whisksystem-invokerhealthtestaction0' after: class io.fabric8.kubernetes.client.KubernetesClientException - Failure executing: GET at: https://10.96.0.1/api/v1/namespaces/openwhisk/events?fieldSelector=involvedObject.name%3Dwskowdev-invoker-55-5-whisksystem-invokerhealthtestaction0. Message: Forbidden!Configured service account doesn't have access. Service account may have been revoked. events is forbidden: User "system:serviceaccount:openwhisk:owdev-invoker" cannot list resource "events" in API group "" in the namespace "openwhisk".
+[2024-03-25T22:41:51.443Z] [INFO] [#tid_sid_invokerHealth] [KubernetesClient] Deleting pod wskowdev-invoker-55-5-whisksystem-invokerhealthtestaction0 [marker:invoker_kubeapi.delete_start:3696273]
+[2024-03-25T22:41:51.468Z] [INFO] [#tid_sid_invokerHealth] [KubernetesClient]  [marker:invoker_kubeapi.delete_finish:3696310:36]
+[2024-03-25T22:41:51.486Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore] [PUT] 'test_activations' saving document: 'id: whisk.system/f53b6f5e732341d3bb6f5e732381d305, rev: null' [marker:database_saveDocument_start:3696325]
+[2024-03-25T22:41:51.486Z] [INFO] [#tid_sid_dbBatcher] [CouchDbRestStore] 'test_activations' saving 1 documents [marker:database_saveDocumentBulk_start:3674008]
+[2024-03-25T22:41:51.486Z] [ERROR] [#tid_sid_unknown] [ContainerProxy] Failed to start cold container, queued activations will be aborted.
+[2024-03-25T22:41:51.487Z] [INFO] [#tid_sid_unknown] [ContainerProxy] aborting 0 queued activations after failed init or failed cold start
+[2024-03-25T22:41:51.542Z] [INFO] [#tid_sid_invokerHealth] [MessagingActiveAck] posted combined of activation f53b6f5e732341d3bb6f5e732381d305
+[2024-03-25T22:41:51.569Z] [INFO] [#tid_sid_dbBatcher] [CouchDbRestStore]  [marker:database_saveDocumentBulk_finish:3674092:84]
+[2024-03-25T22:41:51.570Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore]  [marker:database_saveDocument_finish:3696412:86]
+[2024-03-25T22:45:06.053Z] [INFO] [#tid_sid_invokerHealth] [InvokerReactive]  [marker:invoker_activation_start:3890895]
+[2024-03-25T22:45:06.055Z] [INFO] [#tid_sid_invokerHealth] [InvokerReactive]  [marker:invoker_activation_start:3890895]
+[2024-03-25T22:45:06.056Z] [WARN] [#tid_sid_invokerHealth] [InvokerReactive] revision was not provided for whisk.system/invokerHealthTestAction0
+[2024-03-25T22:45:06.056Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore] [GET] 'test_whisks' finding document: 'id: whisk.system/invokerHealthTestAction0' [marker:database_getDocument_start:3890896]
+[2024-03-25T22:45:06.059Z] [WARN] [#tid_sid_invokerHealth] [InvokerReactive] revision was not provided for whisk.system/invokerHealthTestAction0
+[2024-03-25T22:45:06.060Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore] [GET] 'test_whisks' finding document: 'id: whisk.system/invokerHealthTestAction0' [marker:database_getDocument_start:3890900]
+[2024-03-25T22:45:06.125Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore]  [marker:database_getDocument_finish:3890967:71]
+[2024-03-25T22:45:06.126Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore]  [marker:database_getDocument_finish:3890967:67]
+[2024-03-25T22:45:06.178Z] [INFO] [#tid_sid_invokerHealth] [ContainerPool] containerStart containerState: cold container: None activations: 1 of max 1 action: invokerHealthTestAction0 namespace: whisk.system activationId: 37945dbfd3dc401b945dbfd3dce01b0e [marker:invoker_containerStart.cold_counter:3891020]
+[2024-03-25T22:45:06.195Z] [INFO] [#tid_sid_invokerHealth] [KubernetesClient] launching pod wskowdev-invoker-55-6-whisksystem-invokerhealthtestaction0 (image:openwhisk/action-nodejs-v10:1.16.0, mem: 128) (timeout: 60s) [marker:invoker_kubeapi.create_start:3891036]
+[2024-03-25T22:45:06.227Z] [INFO] [#tid_sid_invokerHealth] [ContainerPool] containerStart containerState: cold container: None activations: 1 of max 1 action: invokerHealthTestAction0 namespace: whisk.system activationId: 532ca5e3e3c34d04aca5e3e3c31d04ee [marker:invoker_containerStart.cold_counter:3891065]
+[2024-03-25T22:45:06.227Z] [INFO] [#tid_sid_invokerHealth] [KubernetesClient] launching pod wskowdev-invoker-55-7-whisksystem-invokerhealthtestaction0 (image:openwhisk/action-nodejs-v10:1.16.0, mem: 128) (timeout: 60s) [marker:invoker_kubeapi.create_start:3891068]
+[2024-03-25T22:45:12.521Z] [INFO] [#tid_sid_invokerHealth] [KubernetesClient]  [marker:invoker_kubeapi.create_finish:3897362:6325]
+[2024-03-25T22:45:12.524Z] [INFO] [#tid_sid_invokerHealth] [KubernetesClient]  [marker:invoker_kubeapi.create_finish:3897365:6297]
+[2024-03-25T22:45:12.575Z] [INFO] [#tid_sid_invokerHealth] [KubernetesContainer] sending initialization to ContainerId(wskowdev-invoker-55-6-whisksystem-invokerhealthtestaction0) ContainerAddress(10.244.25.60,8080) [marker:invoker_activationInit_start:3897416]
+[2024-03-25T22:45:12.586Z] [INFO] [#tid_sid_invokerHealth] [KubernetesContainer] sending initialization to ContainerId(wskowdev-invoker-55-7-whisksystem-invokerhealthtestaction0) ContainerAddress(10.244.28.73,8080) [marker:invoker_activationInit_start:3897428]
+[2024-03-25T22:45:12.619Z] [INFO] [#tid_sid_invokerHealth] [KubernetesContainer] initialization result: ok [marker:invoker_activationInit_finish:3897461:43]
+[2024-03-25T22:45:12.620Z] [INFO] [#tid_sid_unknown] [ContainerProxy] resending up to 0 from 0 buffered jobs
+[2024-03-25T22:45:12.621Z] [INFO] [#tid_sid_invokerHealth] [KubernetesContainer] sending arguments to /whisk.system/invokerHealthTestAction0 at ContainerId(wskowdev-invoker-55-6-whisksystem-invokerhealthtestaction0) ContainerAddress(10.244.25.60,8080) [marker:invoker_activationRun_start:3897462]
+[2024-03-25T22:45:12.624Z] [INFO] [#tid_sid_invokerHealth] [KubernetesContainer] initialization result: ok [marker:invoker_activationInit_finish:3897466:37]
+[2024-03-25T22:45:12.625Z] [INFO] [#tid_sid_unknown] [ContainerProxy] resending up to 0 from 0 buffered jobs
+[2024-03-25T22:45:12.625Z] [INFO] [#tid_sid_invokerHealth] [KubernetesContainer] sending arguments to /whisk.system/invokerHealthTestAction0 at ContainerId(wskowdev-invoker-55-7-whisksystem-invokerhealthtestaction0) ContainerAddress(10.244.28.73,8080) [marker:invoker_activationRun_start:3897467]
+[2024-03-25T22:45:12.628Z] [INFO] [#tid_sid_invokerHealth] [KubernetesContainer] running result: ok [marker:invoker_activationRun_finish:3897470:8]
+[2024-03-25T22:45:12.630Z] [INFO] [#tid_sid_invokerHealth] [ContainerProxy]  [marker:invoker_collectLogs_start:3897471]
+[2024-03-25T22:45:12.638Z] [INFO] [#tid_sid_invokerHealth] [KubernetesContainer] running result: ok [marker:invoker_activationRun_finish:3897480:12]
+[2024-03-25T22:45:12.638Z] [INFO] [#tid_sid_invokerHealth] [ContainerProxy]  [marker:invoker_collectLogs_start:3897480]
+[2024-03-25T22:45:12.681Z] [INFO] [#tid_sid_invokerHealth] [ContainerProxy]  [marker:invoker_collectLogs_finish:3897523:51]
+[2024-03-25T22:45:12.683Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore] [PUT] 'test_activations' saving document: 'id: whisk.system/37945dbfd3dc401b945dbfd3dce01b0e, rev: null' [marker:database_saveDocument_start:3897525]
+[2024-03-25T22:45:12.684Z] [INFO] [#tid_sid_dbBatcher] [CouchDbRestStore] 'test_activations' saving 1 documents [marker:database_saveDocumentBulk_start:3875207]
+[2024-03-25T22:45:12.686Z] [INFO] [#tid_sid_invokerHealth] [MessagingActiveAck] posted completion of activation 37945dbfd3dc401b945dbfd3dce01b0e
+[2024-03-25T22:45:12.699Z] [INFO] [#tid_sid_invokerHealth] [InvokerReactive]  [marker:invoker_activation_start:3897541]
+[2024-03-25T22:45:12.701Z] [INFO] [#tid_sid_invokerHealth] [ContainerProxy]  [marker:invoker_collectLogs_finish:3897542:62]
+[2024-03-25T22:45:12.701Z] [WARN] [#tid_sid_invokerHealth] [InvokerReactive] revision was not provided for whisk.system/invokerHealthTestAction0
+[2024-03-25T22:45:12.702Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore] [GET] 'test_whisks' finding document: 'id: whisk.system/invokerHealthTestAction0' [marker:database_getDocument_start:3897543]
+[2024-03-25T22:45:12.702Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore] [PUT] 'test_activations' saving document: 'id: whisk.system/532ca5e3e3c34d04aca5e3e3c31d04ee, rev: null' [marker:database_saveDocument_start:3897543]
+[2024-03-25T22:45:12.702Z] [INFO] [#tid_sid_dbBatcher] [CouchDbRestStore] 'test_activations' saving 1 documents [marker:database_saveDocumentBulk_start:3875226]
+[2024-03-25T22:45:12.704Z] [INFO] [#tid_sid_invokerHealth] [MessagingActiveAck] posted completion of activation 532ca5e3e3c34d04aca5e3e3c31d04ee
+[2024-03-25T22:45:12.721Z] [INFO] [#tid_sid_dbBatcher] [CouchDbRestStore]  [marker:database_saveDocumentBulk_finish:3875244:36]
+[2024-03-25T22:45:12.722Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore]  [marker:database_saveDocument_finish:3897563:38]
+[2024-03-25T22:45:12.727Z] [INFO] [#tid_sid_dbBatcher] [CouchDbRestStore]  [marker:database_saveDocumentBulk_finish:3875250:24]
+[2024-03-25T22:45:12.730Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore]  [marker:database_saveDocument_finish:3897571:27]
+[2024-03-25T22:45:12.734Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore]  [marker:database_getDocument_finish:3897575:32]
+[2024-03-25T22:45:12.736Z] [INFO] [#tid_sid_invokerHealth] [ContainerPool] containerStart containerState: warmed container: Some(ContainerId(wskowdev-invoker-55-6-whisksystem-invokerhealthtestaction0)) activations: 1 of max 1 action: invokerHealthTestAction0 namespace: whisk.system activationId: 6504658e5f1b467d84658e5f1b867d73 [marker:invoker_containerStart.warmed_counter:3897578]
+[2024-03-25T22:45:12.737Z] [INFO] [#tid_sid_invokerHealth] [KubernetesContainer] sending arguments to /whisk.system/invokerHealthTestAction0 at ContainerId(wskowdev-invoker-55-6-whisksystem-invokerhealthtestaction0) ContainerAddress(10.244.25.60,8080) [marker:invoker_activationRun_start:3897579]
+[2024-03-25T22:45:12.743Z] [INFO] [#tid_sid_invokerHealth] [KubernetesContainer] running result: ok [marker:invoker_activationRun_finish:3897585:5]
+[2024-03-25T22:45:12.744Z] [INFO] [#tid_sid_invokerHealth] [ContainerProxy]  [marker:invoker_collectLogs_start:3897586]
+[2024-03-25T22:45:12.768Z] [INFO] [#tid_sid_invokerHealth] [ContainerProxy]  [marker:invoker_collectLogs_finish:3897609:23]
+[2024-03-25T22:45:12.769Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore] [PUT] 'test_activations' saving document: 'id: whisk.system/6504658e5f1b467d84658e5f1b867d73, rev: null' [marker:database_saveDocument_start:3897611]
+[2024-03-25T22:45:12.770Z] [INFO] [#tid_sid_dbBatcher] [CouchDbRestStore] 'test_activations' saving 1 documents [marker:database_saveDocumentBulk_start:3875294]
+[2024-03-25T22:45:12.773Z] [INFO] [#tid_sid_invokerHealth] [MessagingActiveAck] posted completion of activation 6504658e5f1b467d84658e5f1b867d73
+[2024-03-25T22:45:12.809Z] [INFO] [#tid_sid_dbBatcher] [CouchDbRestStore]  [marker:database_saveDocumentBulk_finish:3875333:39]
+[2024-03-25T22:45:12.810Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore]  [marker:database_saveDocument_finish:3897652:41]
+[2024-03-25T22:45:41.670Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:3904194]
+[2024-03-25T22:45:41.691Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:3904215:21]
+[2024-03-25T22:45:41.692Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-25T22:50:41.691Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:4204214]
+[2024-03-25T22:50:41.753Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:4204277:63]
+[2024-03-25T22:50:41.754Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-25T22:52:14.000Z] [INFO] [#tid_sid_invokerHealth] [InvokerReactive]  [marker:invoker_activation_start:4318841]
+[2024-03-25T22:52:14.001Z] [WARN] [#tid_sid_invokerHealth] [InvokerReactive] revision was not provided for whisk.system/invokerHealthTestAction0
+[2024-03-25T22:52:14.001Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore] [GET] 'test_whisks' finding document: 'id: whisk.system/invokerHealthTestAction0' [marker:database_getDocument_start:4318842]
+[2024-03-25T22:52:14.066Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore]  [marker:database_getDocument_finish:4318908:66]
+[2024-03-25T22:52:14.069Z] [INFO] [#tid_sid_invokerHealth] [ContainerPool] containerStart containerState: warmed container: Some(ContainerId(wskowdev-invoker-55-7-whisksystem-invokerhealthtestaction0)) activations: 1 of max 1 action: invokerHealthTestAction0 namespace: whisk.system activationId: ad990b150b864214990b150b86121470 [marker:invoker_containerStart.warmed_counter:4318910]
+[2024-03-25T22:52:14.078Z] [INFO] [#tid_sid_invokerHealth] [KubernetesContainer] sending arguments to /whisk.system/invokerHealthTestAction0 at ContainerId(wskowdev-invoker-55-7-whisksystem-invokerhealthtestaction0) ContainerAddress(10.244.28.73,8080) [marker:invoker_activationRun_start:4318918]
+[2024-03-25T22:52:14.092Z] [INFO] [#tid_sid_invokerHealth] [KubernetesContainer] running result: ok [marker:invoker_activationRun_finish:4318930:11]
+[2024-03-25T22:52:14.092Z] [INFO] [#tid_sid_invokerHealth] [ContainerProxy]  [marker:invoker_collectLogs_start:4318931]
+[2024-03-25T22:52:14.209Z] [INFO] [#tid_sid_invokerHealth] [ContainerProxy]  [marker:invoker_collectLogs_finish:4319050:119]
+[2024-03-25T22:52:14.210Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore] [PUT] 'test_activations' saving document: 'id: whisk.system/ad990b150b864214990b150b86121470, rev: null' [marker:database_saveDocument_start:4319052]
+[2024-03-25T22:52:14.211Z] [INFO] [#tid_sid_dbBatcher] [CouchDbRestStore] 'test_activations' saving 1 documents [marker:database_saveDocumentBulk_start:4296735]
+[2024-03-25T22:52:14.218Z] [INFO] [#tid_sid_invokerHealth] [MessagingActiveAck] posted completion of activation ad990b150b864214990b150b86121470
+[2024-03-25T22:52:14.230Z] [INFO] [#tid_sid_invokerHealth] [InvokerReactive]  [marker:invoker_activation_start:4319072]
+[2024-03-25T22:52:14.230Z] [WARN] [#tid_sid_invokerHealth] [InvokerReactive] revision was not provided for whisk.system/invokerHealthTestAction0
+[2024-03-25T22:52:14.231Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore] [GET] 'test_whisks' finding document: 'id: whisk.system/invokerHealthTestAction0' [marker:database_getDocument_start:4319072]
+[2024-03-25T22:52:14.243Z] [INFO] [#tid_sid_dbBatcher] [CouchDbRestStore]  [marker:database_saveDocumentBulk_finish:4296766:31]
+[2024-03-25T22:52:14.244Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore]  [marker:database_saveDocument_finish:4319085:33]
+[2024-03-25T22:52:14.251Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore]  [marker:database_getDocument_finish:4319092:20]
+[2024-03-25T22:52:14.258Z] [INFO] [#tid_sid_invokerHealth] [ContainerPool] containerStart containerState: warmed container: Some(ContainerId(wskowdev-invoker-55-6-whisksystem-invokerhealthtestaction0)) activations: 1 of max 1 action: invokerHealthTestAction0 namespace: whisk.system activationId: c6671119cf434192a71119cf43f1928a [marker:invoker_containerStart.warmed_counter:4319095]
+[2024-03-25T22:52:14.258Z] [INFO] [#tid_sid_invokerHealth] [KubernetesContainer] sending arguments to /whisk.system/invokerHealthTestAction0 at ContainerId(wskowdev-invoker-55-6-whisksystem-invokerhealthtestaction0) ContainerAddress(10.244.25.60,8080) [marker:invoker_activationRun_start:4319097]
+[2024-03-25T22:52:14.275Z] [INFO] [#tid_sid_invokerHealth] [KubernetesContainer] running result: ok [marker:invoker_activationRun_finish:4319116:18]
+[2024-03-25T22:52:14.275Z] [INFO] [#tid_sid_invokerHealth] [ContainerProxy]  [marker:invoker_collectLogs_start:4319117]
+[2024-03-25T22:52:14.315Z] [INFO] [#tid_sid_invokerHealth] [ContainerProxy]  [marker:invoker_collectLogs_finish:4319155:38]
+[2024-03-25T22:52:14.315Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore] [PUT] 'test_activations' saving document: 'id: whisk.system/c6671119cf434192a71119cf43f1928a, rev: null' [marker:database_saveDocument_start:4319156]
+[2024-03-25T22:52:14.316Z] [INFO] [#tid_sid_dbBatcher] [CouchDbRestStore] 'test_activations' saving 1 documents [marker:database_saveDocumentBulk_start:4296838]
+[2024-03-25T22:52:14.319Z] [INFO] [#tid_sid_invokerHealth] [MessagingActiveAck] posted completion of activation c6671119cf434192a71119cf43f1928a
+[2024-03-25T22:52:14.340Z] [INFO] [#tid_sid_dbBatcher] [CouchDbRestStore]  [marker:database_saveDocumentBulk_finish:4296864:26]
+[2024-03-25T22:52:14.341Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore]  [marker:database_saveDocument_finish:4319183:27]
+[2024-03-25T22:55:41.712Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:4504235]
+[2024-03-25T22:55:41.777Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:4504301:66]
+[2024-03-25T22:55:41.778Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-25T23:00:41.741Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:4804254]
+[2024-03-25T23:00:41.825Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:4804349:94]
+[2024-03-25T23:00:41.826Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-25T23:02:14.309Z] [INFO] [#tid_sid_invokerNanny] [KubernetesClient] Deleting pod wskowdev-invoker-55-7-whisksystem-invokerhealthtestaction0 [marker:invoker_kubeapi.delete_start:4896832]
+[2024-03-25T23:02:14.406Z] [INFO] [#tid_sid_invokerNanny] [KubernetesClient] Deleting pod wskowdev-invoker-55-6-whisksystem-invokerhealthtestaction0 [marker:invoker_kubeapi.delete_start:4896930]
+[2024-03-25T23:02:14.448Z] [INFO] [#tid_sid_invokerNanny] [KubernetesClient]  [marker:invoker_kubeapi.delete_finish:4896972:139]
+[2024-03-25T23:02:14.451Z] [INFO] [#tid_sid_invokerNanny] [KubernetesClient]  [marker:invoker_kubeapi.delete_finish:4896975:45]
+[2024-03-25T23:05:41.752Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:5104275]
+[2024-03-25T23:05:41.811Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:5104334:58]
+[2024-03-25T23:05:41.812Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-25T23:10:41.772Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:5404294]
+[2024-03-25T23:10:41.845Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:5404369:73]
+[2024-03-25T23:10:41.845Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-25T23:15:41.791Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:5704314]
+[2024-03-25T23:15:41.850Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:5704374:59]
+[2024-03-25T23:15:41.851Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-25T23:20:41.811Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:6004334]
+[2024-03-25T23:20:41.881Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:6004405:70]
+[2024-03-25T23:20:41.882Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-25T23:25:41.832Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:6304355]
+[2024-03-25T23:25:41.906Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:6304429:74]
+[2024-03-25T23:25:41.907Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-25T23:30:41.852Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:6604375]
+[2024-03-25T23:30:41.916Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:6604440:63]
+[2024-03-25T23:30:41.916Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-25T23:35:41.871Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:6904394]
+[2024-03-25T23:35:41.941Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:6904465:71]
+[2024-03-25T23:35:41.941Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-25T23:40:41.891Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:7204414]
+[2024-03-25T23:40:41.960Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:7204482:67]
+[2024-03-25T23:40:41.961Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-25T23:45:41.912Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:7504434]
+[2024-03-25T23:45:41.977Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:7504501:66]
+[2024-03-25T23:45:41.978Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-25T23:49:32.915Z] [INFO] [#tid_sid_invokerHealth] [InvokerReactive]  [marker:invoker_activation_start:7757756]
+[2024-03-25T23:49:32.916Z] [WARN] [#tid_sid_invokerHealth] [InvokerReactive] revision was not provided for whisk.system/invokerHealthTestAction0
+[2024-03-25T23:49:32.916Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore] [GET] 'test_whisks' finding document: 'id: whisk.system/invokerHealthTestAction0' [marker:database_getDocument_start:7757757]
+[2024-03-25T23:49:47.291Z] [INFO] Message [akka.io.Dns$Resolved] from Actor[akka://invoker-actor-system/system/IO-DNS/inet-address/$d#1052722845] to Actor[akka://invoker-actor-system/system/IO-TCP/selectors/$a/37#410948349] was not delivered. [3] dead letters encountered. If this is not an expected behavior, then [Actor[akka://invoker-actor-system/system/IO-TCP/selectors/$a/37#410948349]] may have terminated unexpectedly, This logging can be turned off or adjusted with configuration settings 'akka.log-dead-letters' and 'akka.log-dead-letters-during-shutdown'.
+[2024-03-25T23:49:47.318Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore]  [marker:database_getDocument_finish:7772160:14403]
+[2024-03-25T23:49:47.363Z] [INFO] [#tid_sid_invokerHealth] [ContainerPool] containerStart containerState: cold container: None activations: 1 of max 1 action: invokerHealthTestAction0 namespace: whisk.system activationId: 42c8bcdc0e994b0388bcdc0e99cb0382 [marker:invoker_containerStart.cold_counter:7772205]
+[2024-03-25T23:49:47.446Z] [INFO] [#tid_sid_invokerHealth] [KubernetesClient] launching pod wskowdev-invoker-55-8-whisksystem-invokerhealthtestaction0 (image:openwhisk/action-nodejs-v10:1.16.0, mem: 128) (timeout: 60s) [marker:invoker_kubeapi.create_start:7772288]
+[2024-03-25T23:49:59.894Z] [ERROR] [#tid_sid_invokerHealth] [KubernetesClient] Failed create pod for 'wskowdev-invoker-55-8-whisksystem-invokerhealthtestaction0': class io.fabric8.kubernetes.client.KubernetesClientException - An error has occurred. [marker:invoker_kubeapi.create_error:7784729:12441]
+[2024-03-25T23:50:09.144Z] [INFO] [#tid_sid_invokerHealth] [KubernetesContainer] Deleting failed pod 'wskowdev-invoker-55-8-whisksystem-invokerhealthtestaction0' after: class io.fabric8.kubernetes.client.KubernetesClientException - Failure executing: GET at: https://10.96.0.1/api/v1/namespaces/openwhisk/events?fieldSelector=involvedObject.name%3Dwskowdev-invoker-55-8-whisksystem-invokerhealthtestaction0. Message: Forbidden!Configured service account doesn't have access. Service account may have been revoked. events is forbidden: User "system:serviceaccount:openwhisk:owdev-invoker" cannot list resource "events" in API group "" in the namespace "openwhisk".
+[2024-03-25T23:50:09.145Z] [INFO] [#tid_sid_invokerHealth] [KubernetesClient] Deleting pod wskowdev-invoker-55-8-whisksystem-invokerhealthtestaction0 [marker:invoker_kubeapi.delete_start:7793986]
+[2024-03-25T23:50:09.903Z] [INFO] [#tid_sid_invokerHealth] [KubernetesClient]  [marker:invoker_kubeapi.delete_finish:7794745:759]
+[2024-03-25T23:50:09.906Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore] [PUT] 'test_activations' saving document: 'id: whisk.system/42c8bcdc0e994b0388bcdc0e99cb0382, rev: null' [marker:database_saveDocument_start:7794748]
+[2024-03-25T23:50:09.907Z] [INFO] [#tid_sid_dbBatcher] [CouchDbRestStore] 'test_activations' saving 1 documents [marker:database_saveDocumentBulk_start:7772431]
+[2024-03-25T23:50:09.914Z] [ERROR] [#tid_sid_unknown] [ContainerProxy] Failed to start cold container, queued activations will be aborted.
+[2024-03-25T23:50:09.914Z] [INFO] [#tid_sid_unknown] [ContainerProxy] aborting 0 queued activations after failed init or failed cold start
+[2024-03-25T23:50:12.990Z] [INFO] [#tid_sid_invokerHealth] [MessagingActiveAck] posted combined of activation 42c8bcdc0e994b0388bcdc0e99cb0382
+[2024-03-25T23:50:13.778Z] [INFO] [#tid_sid_dbBatcher] [CouchDbRestStore]  [marker:database_saveDocumentBulk_finish:7776302:3871]
+[2024-03-25T23:50:13.780Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore]  [marker:database_saveDocument_finish:7798621:3873]
+[2024-03-25T23:50:41.932Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:7804453]
+[2024-03-25T23:50:42.612Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:7805136:682]
+[2024-03-25T23:50:42.613Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-25T23:50:47.109Z] [INFO] [#tid_sid_invokerHealth] [InvokerReactive]  [marker:invoker_activation_start:7831950]
+[2024-03-25T23:50:47.109Z] [WARN] [#tid_sid_invokerHealth] [InvokerReactive] revision was not provided for whisk.system/invokerHealthTestAction0
+[2024-03-25T23:50:47.110Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore] [GET] 'test_whisks' finding document: 'id: whisk.system/invokerHealthTestAction0' [marker:database_getDocument_start:7831951]
+[2024-03-25T23:50:48.103Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore]  [marker:database_getDocument_finish:7832945:994]
+[2024-03-25T23:50:48.158Z] [INFO] [#tid_sid_invokerHealth] [ContainerPool] containerStart containerState: cold container: None activations: 1 of max 1 action: invokerHealthTestAction0 namespace: whisk.system activationId: 71d237748f3046f29237748f3066f26c [marker:invoker_containerStart.cold_counter:7833000]
+[2024-03-25T23:50:48.162Z] [INFO] [#tid_sid_invokerHealth] [KubernetesClient] launching pod wskowdev-invoker-55-9-whisksystem-invokerhealthtestaction0 (image:openwhisk/action-nodejs-v10:1.16.0, mem: 128) (timeout: 60s) [marker:invoker_kubeapi.create_start:7833004]
+[2024-03-25T23:51:14.186Z] [INFO] [#tid_sid_invokerHealth] [KubernetesClient]  [marker:invoker_kubeapi.create_finish:7859028:26024]
+[2024-03-25T23:51:15.067Z] [INFO] [#tid_sid_invokerHealth] [KubernetesContainer] sending initialization to ContainerId(wskowdev-invoker-55-9-whisksystem-invokerhealthtestaction0) ContainerAddress(10.244.26.75,8080) [marker:invoker_activationInit_start:7859908]
+[2024-03-25T23:51:15.114Z] [INFO] [#tid_sid_invokerHealth] [KubernetesContainer] initialization result: ok [marker:invoker_activationInit_finish:7859956:46]
+[2024-03-25T23:51:15.114Z] [INFO] [#tid_sid_unknown] [ContainerProxy] resending up to 0 from 0 buffered jobs
+[2024-03-25T23:51:15.115Z] [INFO] [#tid_sid_invokerHealth] [KubernetesContainer] sending arguments to /whisk.system/invokerHealthTestAction0 at ContainerId(wskowdev-invoker-55-9-whisksystem-invokerhealthtestaction0) ContainerAddress(10.244.26.75,8080) [marker:invoker_activationRun_start:7859956]
+[2024-03-25T23:51:15.124Z] [INFO] [#tid_sid_invokerHealth] [KubernetesContainer] running result: ok [marker:invoker_activationRun_finish:7859966:9]
+[2024-03-25T23:51:15.125Z] [INFO] [#tid_sid_invokerHealth] [ContainerProxy]  [marker:invoker_collectLogs_start:7859967]
+[2024-03-25T23:51:15.152Z] [INFO] [#tid_sid_invokerHealth] [ContainerProxy]  [marker:invoker_collectLogs_finish:7859994:27]
+[2024-03-25T23:51:15.153Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore] [PUT] 'test_activations' saving document: 'id: whisk.system/71d237748f3046f29237748f3066f26c, rev: null' [marker:database_saveDocument_start:7859995]
+[2024-03-25T23:51:15.154Z] [INFO] [#tid_sid_dbBatcher] [CouchDbRestStore] 'test_activations' saving 1 documents [marker:database_saveDocumentBulk_start:7837678]
+[2024-03-25T23:51:15.157Z] [INFO] [#tid_sid_invokerHealth] [MessagingActiveAck] posted completion of activation 71d237748f3046f29237748f3066f26c
+[2024-03-25T23:51:15.185Z] [INFO] [#tid_sid_dbBatcher] [CouchDbRestStore]  [marker:database_saveDocumentBulk_finish:7837709:31]
+[2024-03-25T23:51:15.186Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore]  [marker:database_saveDocument_finish:7860028:33]
+[2024-03-25T23:51:18.112Z] [INFO] [#tid_sid_invokerHealth] [InvokerReactive]  [marker:invoker_activation_start:7862953]
+[2024-03-25T23:51:18.113Z] [WARN] [#tid_sid_invokerHealth] [InvokerReactive] revision was not provided for whisk.system/invokerHealthTestAction0
+[2024-03-25T23:51:18.113Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore] [GET] 'test_whisks' finding document: 'id: whisk.system/invokerHealthTestAction0' [marker:database_getDocument_start:7862954]
+[2024-03-25T23:51:18.145Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore]  [marker:database_getDocument_finish:7862987:33]
+[2024-03-25T23:51:18.149Z] [INFO] [#tid_sid_invokerHealth] [ContainerPool] containerStart containerState: warmed container: Some(ContainerId(wskowdev-invoker-55-9-whisksystem-invokerhealthtestaction0)) activations: 1 of max 1 action: invokerHealthTestAction0 namespace: whisk.system activationId: 04d67e1607434654967e1607437654be [marker:invoker_containerStart.warmed_counter:7862991]
+[2024-03-25T23:51:18.152Z] [INFO] [#tid_sid_invokerHealth] [KubernetesContainer] sending arguments to /whisk.system/invokerHealthTestAction0 at ContainerId(wskowdev-invoker-55-9-whisksystem-invokerhealthtestaction0) ContainerAddress(10.244.26.75,8080) [marker:invoker_activationRun_start:7862994]
+[2024-03-25T23:51:18.160Z] [INFO] [#tid_sid_invokerHealth] [KubernetesContainer] running result: ok [marker:invoker_activationRun_finish:7863002:7]
+[2024-03-25T23:51:18.161Z] [INFO] [#tid_sid_invokerHealth] [ContainerProxy]  [marker:invoker_collectLogs_start:7863003]
+[2024-03-25T23:51:18.184Z] [INFO] [#tid_sid_invokerHealth] [ContainerProxy]  [marker:invoker_collectLogs_finish:7863025:22]
+[2024-03-25T23:51:18.185Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore] [PUT] 'test_activations' saving document: 'id: whisk.system/04d67e1607434654967e1607437654be, rev: null' [marker:database_saveDocument_start:7863027]
+[2024-03-25T23:51:18.186Z] [INFO] [#tid_sid_dbBatcher] [CouchDbRestStore] 'test_activations' saving 1 documents [marker:database_saveDocumentBulk_start:7840709]
+[2024-03-25T23:51:18.188Z] [INFO] [#tid_sid_invokerHealth] [MessagingActiveAck] posted completion of activation 04d67e1607434654967e1607437654be
+[2024-03-25T23:51:18.210Z] [INFO] [#tid_sid_dbBatcher] [CouchDbRestStore]  [marker:database_saveDocumentBulk_finish:7840733:23]
+[2024-03-25T23:51:18.213Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore]  [marker:database_saveDocument_finish:7863054:27]
+[2024-03-25T23:54:19.869Z] [INFO] [#tid_sid_invokerHealth] [InvokerReactive]  [marker:invoker_activation_start:8044711]
+[2024-03-25T23:54:19.870Z] [WARN] [#tid_sid_invokerHealth] [InvokerReactive] revision was not provided for whisk.system/invokerHealthTestAction0
+[2024-03-25T23:54:19.871Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore] [GET] 'test_whisks' finding document: 'id: whisk.system/invokerHealthTestAction0' [marker:database_getDocument_start:8044712]
+[2024-03-25T23:54:28.551Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore]  [marker:database_getDocument_finish:8053392:8680]
+[2024-03-25T23:54:28.554Z] [INFO] [#tid_sid_invokerHealth] [ContainerPool] containerStart containerState: warmed container: Some(ContainerId(wskowdev-invoker-55-9-whisksystem-invokerhealthtestaction0)) activations: 1 of max 1 action: invokerHealthTestAction0 namespace: whisk.system activationId: 2ca78a89a6144793a78a89a614f79341 [marker:invoker_containerStart.warmed_counter:8053396]
+[2024-03-25T23:54:28.561Z] [INFO] [#tid_sid_invokerHealth] [KubernetesContainer] sending arguments to /whisk.system/invokerHealthTestAction0 at ContainerId(wskowdev-invoker-55-9-whisksystem-invokerhealthtestaction0) ContainerAddress(10.244.26.75,8080) [marker:invoker_activationRun_start:8053402]
+[2024-03-25T23:54:28.578Z] [INFO] [#tid_sid_invokerHealth] [KubernetesContainer] running result: ok [marker:invoker_activationRun_finish:8053420:17]
+[2024-03-25T23:54:28.579Z] [INFO] [#tid_sid_invokerHealth] [ContainerProxy]  [marker:invoker_collectLogs_start:8053421]
+[2024-03-25T23:54:30.612Z] [INFO] [#tid_sid_invokerHealth] [ContainerProxy]  [marker:invoker_collectLogs_finish:8055443:2022]
+[2024-03-25T23:54:30.613Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore] [PUT] 'test_activations' saving document: 'id: whisk.system/2ca78a89a6144793a78a89a614f79341, rev: null' [marker:database_saveDocument_start:8055445]
+[2024-03-25T23:54:30.613Z] [INFO] [#tid_sid_dbBatcher] [CouchDbRestStore] 'test_activations' saving 1 documents [marker:database_saveDocumentBulk_start:8033129]
+[2024-03-25T23:54:30.664Z] [ERROR] * Retrieving the logs from Kubernetes failed.
+okhttp3.internal.http2.StreamResetException: stream was reset: PROTOCOL_ERROR
+	at okhttp3.internal.http2.Http2Stream.takeHeaders(Http2Stream.java:158)
+	at okhttp3.internal.http2.Http2Codec.readResponseHeaders(Http2Codec.java:131)
+	at okhttp3.internal.http.CallServerInterceptor.intercept(CallServerInterceptor.java:88)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
+	at okhttp3.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.java:45)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
+	at okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.java:93)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
+	at okhttp3.internal.http.BridgeInterceptor.intercept(BridgeInterceptor.java:93)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
+	at okhttp3.internal.http.RetryAndFollowUpInterceptor.intercept(RetryAndFollowUpInterceptor.java:126)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
+	at io.fabric8.kubernetes.client.utils.BackwardsCompatibilityInterceptor.intercept(BackwardsCompatibilityInterceptor.java:119)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
+	at io.fabric8.kubernetes.client.utils.ImpersonatorInterceptor.intercept(ImpersonatorInterceptor.java:68)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
+	at io.fabric8.kubernetes.client.utils.HttpClientUtils.lambda$createHttpClient$3(HttpClientUtils.java:110)
+	at io.fabric8.kubernetes.client.utils.HttpClientUtils$$Lambda$1023/00000000AA270950.intercept(Unknown Source)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
+	at okhttp3.RealCall.getResponseWithInterceptorChain(RealCall.java:254)
+	at okhttp3.RealCall$AsyncCall.execute(RealCall.java:200)
+	at okhttp3.internal.NamedRunnable.run(NamedRunnable.java:32)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:836)
+[2024-03-25T23:54:31.919Z] [INFO] [#tid_sid_dbBatcher] [CouchDbRestStore]  [marker:database_saveDocumentBulk_finish:8034443:1314]
+[2024-03-25T23:54:31.921Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore]  [marker:database_saveDocument_finish:8056762:1316]
+[2024-03-25T23:54:32.713Z] [INFO] [#tid_sid_invokerHealth] [MessagingActiveAck] posted completion of activation 2ca78a89a6144793a78a89a614f79341
+[2024-03-25T23:54:42.397Z] [INFO] [#tid_sid_invokerHealth] [InvokerReactive]  [marker:invoker_activation_start:8067239]
+[2024-03-25T23:54:42.397Z] [WARN] [#tid_sid_invokerHealth] [InvokerReactive] revision was not provided for whisk.system/invokerHealthTestAction0
+[2024-03-25T23:54:42.398Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore] [GET] 'test_whisks' finding document: 'id: whisk.system/invokerHealthTestAction0' [marker:database_getDocument_start:8067239]
+[2024-03-25T23:54:42.413Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore]  [marker:database_getDocument_finish:8067254:15]
+[2024-03-25T23:54:42.415Z] [INFO] [#tid_sid_invokerHealth] [ContainerPool] containerStart containerState: warmed container: Some(ContainerId(wskowdev-invoker-55-9-whisksystem-invokerhealthtestaction0)) activations: 1 of max 1 action: invokerHealthTestAction0 namespace: whisk.system activationId: 06bec39dd55e4e3dbec39dd55e7e3d14 [marker:invoker_containerStart.warmed_counter:8067257]
+[2024-03-25T23:54:42.417Z] [INFO] [#tid_sid_invokerHealth] [KubernetesContainer] sending arguments to /whisk.system/invokerHealthTestAction0 at ContainerId(wskowdev-invoker-55-9-whisksystem-invokerhealthtestaction0) ContainerAddress(10.244.26.75,8080) [marker:invoker_activationRun_start:8067259]
+[2024-03-25T23:54:42.431Z] [INFO] [#tid_sid_invokerHealth] [KubernetesContainer] running result: ok [marker:invoker_activationRun_finish:8067272:13]
+[2024-03-25T23:54:42.432Z] [INFO] [#tid_sid_invokerHealth] [ContainerProxy]  [marker:invoker_collectLogs_start:8067273]
+[2024-03-25T23:54:42.525Z] [INFO] [#tid_sid_invokerHealth] [ContainerProxy]  [marker:invoker_collectLogs_finish:8067367:94]
+[2024-03-25T23:54:42.526Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore] [PUT] 'test_activations' saving document: 'id: whisk.system/06bec39dd55e4e3dbec39dd55e7e3d14, rev: null' [marker:database_saveDocument_start:8067368]
+[2024-03-25T23:54:42.527Z] [INFO] [#tid_sid_dbBatcher] [CouchDbRestStore] 'test_activations' saving 1 documents [marker:database_saveDocumentBulk_start:8045050]
+[2024-03-25T23:54:42.531Z] [INFO] [#tid_sid_invokerHealth] [MessagingActiveAck] posted completion of activation 06bec39dd55e4e3dbec39dd55e7e3d14
+[2024-03-25T23:54:42.544Z] [INFO] [#tid_sid_invokerHealth] [InvokerReactive]  [marker:invoker_activation_start:8067386]
+[2024-03-25T23:54:42.544Z] [WARN] [#tid_sid_invokerHealth] [InvokerReactive] revision was not provided for whisk.system/invokerHealthTestAction0
+[2024-03-25T23:54:42.544Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore] [GET] 'test_whisks' finding document: 'id: whisk.system/invokerHealthTestAction0' [marker:database_getDocument_start:8067386]
+[2024-03-25T23:54:42.546Z] [INFO] [#tid_sid_dbBatcher] [CouchDbRestStore]  [marker:database_saveDocumentBulk_finish:8045070:19]
+[2024-03-25T23:54:42.547Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore]  [marker:database_saveDocument_finish:8067389:21]
+[2024-03-25T23:54:42.566Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore]  [marker:database_getDocument_finish:8067408:22]
+[2024-03-25T23:54:42.569Z] [INFO] [#tid_sid_invokerHealth] [ContainerPool] containerStart containerState: warmed container: Some(ContainerId(wskowdev-invoker-55-9-whisksystem-invokerhealthtestaction0)) activations: 1 of max 1 action: invokerHealthTestAction0 namespace: whisk.system activationId: 42462c6640024e49862c6640027e4910 [marker:invoker_containerStart.warmed_counter:8067410]
+[2024-03-25T23:54:42.569Z] [INFO] [#tid_sid_invokerHealth] [KubernetesContainer] sending arguments to /whisk.system/invokerHealthTestAction0 at ContainerId(wskowdev-invoker-55-9-whisksystem-invokerhealthtestaction0) ContainerAddress(10.244.26.75,8080) [marker:invoker_activationRun_start:8067411]
+[2024-03-25T23:54:42.576Z] [INFO] [#tid_sid_invokerHealth] [KubernetesContainer] running result: ok [marker:invoker_activationRun_finish:8067418:6]
+[2024-03-25T23:54:42.577Z] [INFO] [#tid_sid_invokerHealth] [ContainerProxy]  [marker:invoker_collectLogs_start:8067418]
+[2024-03-25T23:54:42.599Z] [INFO] [#tid_sid_invokerHealth] [ContainerProxy]  [marker:invoker_collectLogs_finish:8067440:21]
+[2024-03-25T23:54:42.601Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore] [PUT] 'test_activations' saving document: 'id: whisk.system/42462c6640024e49862c6640027e4910, rev: null' [marker:database_saveDocument_start:8067441]
+[2024-03-25T23:54:42.602Z] [INFO] [#tid_sid_dbBatcher] [CouchDbRestStore] 'test_activations' saving 1 documents [marker:database_saveDocumentBulk_start:8045124]
+[2024-03-25T23:54:42.604Z] [INFO] [#tid_sid_invokerHealth] [MessagingActiveAck] posted completion of activation 42462c6640024e49862c6640027e4910
+[2024-03-25T23:54:42.625Z] [INFO] [#tid_sid_dbBatcher] [CouchDbRestStore]  [marker:database_saveDocumentBulk_finish:8045147:23]
+[2024-03-25T23:54:42.628Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore]  [marker:database_saveDocument_finish:8067468:27]
+[2024-03-25T23:55:41.951Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:8104473]
+[2024-03-25T23:55:42.010Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:8104532:59]
+[2024-03-25T23:55:42.012Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-26T00:00:41.971Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:8404494]
+[2024-03-26T00:00:42.047Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:8404571:76]
+[2024-03-26T00:00:42.047Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-26T00:04:42.702Z] [INFO] [#tid_sid_invokerNanny] [KubernetesClient] Deleting pod wskowdev-invoker-55-9-whisksystem-invokerhealthtestaction0 [marker:invoker_kubeapi.delete_start:8645225]
+[2024-03-26T00:04:42.834Z] [INFO] [#tid_sid_invokerNanny] [KubernetesClient]  [marker:invoker_kubeapi.delete_finish:8645358:132]
+[2024-03-26T00:05:41.992Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:8704515]
+[2024-03-26T00:05:42.055Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:8704579:63]
+[2024-03-26T00:05:42.056Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-26T00:10:42.012Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:9004535]
+[2024-03-26T00:10:42.073Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:9004596:61]
+[2024-03-26T00:10:42.074Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-26T00:13:28.292Z] [INFO] [#tid_sid_invokerHealth] [InvokerReactive]  [marker:invoker_activation_start:9193134]
+[2024-03-26T00:13:28.294Z] [WARN] [#tid_sid_invokerHealth] [InvokerReactive] revision was not provided for whisk.system/invokerHealthTestAction0
+[2024-03-26T00:13:28.294Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore] [GET] 'test_whisks' finding document: 'id: whisk.system/invokerHealthTestAction0' [marker:database_getDocument_start:9193135]
+[2024-03-26T00:13:28.355Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore]  [marker:database_getDocument_finish:9193196:61]
+[2024-03-26T00:13:28.420Z] [INFO] [#tid_sid_invokerHealth] [ContainerPool] containerStart containerState: cold container: None activations: 1 of max 1 action: invokerHealthTestAction0 namespace: whisk.system activationId: c8dd8a2154c442e49d8a2154c452e40c [marker:invoker_containerStart.cold_counter:9193262]
+[2024-03-26T00:13:28.425Z] [INFO] [#tid_sid_invokerHealth] [KubernetesClient] launching pod wskowdev-invoker-55-10-whisksystem-invokerhealthtestaction0 (image:openwhisk/action-nodejs-v10:1.16.0, mem: 128) (timeout: 60s) [marker:invoker_kubeapi.create_start:9193267]
+[2024-03-26T00:13:35.941Z] [ERROR] [#tid_sid_invokerHealth] [KubernetesClient] Failed create pod for 'wskowdev-invoker-55-10-whisksystem-invokerhealthtestaction0': class io.fabric8.kubernetes.client.KubernetesClientException - An error has occurred. [marker:invoker_kubeapi.create_error:9200782:7515]
+[2024-03-26T00:13:36.024Z] [INFO] [#tid_sid_invokerHealth] [KubernetesContainer] Deleting failed pod 'wskowdev-invoker-55-10-whisksystem-invokerhealthtestaction0' after: class io.fabric8.kubernetes.client.KubernetesClientException - Failure executing: GET at: https://10.96.0.1/api/v1/namespaces/openwhisk/events?fieldSelector=involvedObject.name%3Dwskowdev-invoker-55-10-whisksystem-invokerhealthtestaction0. Message: Forbidden!Configured service account doesn't have access. Service account may have been revoked. events is forbidden: User "system:serviceaccount:openwhisk:owdev-invoker" cannot list resource "events" in API group "" in the namespace "openwhisk".
+[2024-03-26T00:13:36.025Z] [INFO] [#tid_sid_invokerHealth] [KubernetesClient] Deleting pod wskowdev-invoker-55-10-whisksystem-invokerhealthtestaction0 [marker:invoker_kubeapi.delete_start:9200866]
+[2024-03-26T00:13:36.086Z] [INFO] [#tid_sid_invokerHealth] [KubernetesClient]  [marker:invoker_kubeapi.delete_finish:9200928:62]
+[2024-03-26T00:13:36.090Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore] [PUT] 'test_activations' saving document: 'id: whisk.system/c8dd8a2154c442e49d8a2154c452e40c, rev: null' [marker:database_saveDocument_start:9200931]
+[2024-03-26T00:13:36.090Z] [INFO] [#tid_sid_dbBatcher] [CouchDbRestStore] 'test_activations' saving 1 documents [marker:database_saveDocumentBulk_start:9178614]
+[2024-03-26T00:13:36.092Z] [ERROR] [#tid_sid_unknown] [ContainerProxy] Failed to start cold container, queued activations will be aborted.
+[2024-03-26T00:13:36.093Z] [INFO] [#tid_sid_unknown] [ContainerProxy] aborting 0 queued activations after failed init or failed cold start
+[2024-03-26T00:13:36.098Z] [INFO] [#tid_sid_invokerHealth] [MessagingActiveAck] posted combined of activation c8dd8a2154c442e49d8a2154c452e40c
+[2024-03-26T00:13:36.128Z] [INFO] [#tid_sid_dbBatcher] [CouchDbRestStore]  [marker:database_saveDocumentBulk_finish:9178651:37]
+[2024-03-26T00:13:36.128Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore]  [marker:database_saveDocument_finish:9200970:39]
+[2024-03-26T00:14:10.529Z] [INFO] [#tid_sid_invokerHealth] [InvokerReactive]  [marker:invoker_activation_start:9235370]
+[2024-03-26T00:14:10.530Z] [WARN] [#tid_sid_invokerHealth] [InvokerReactive] revision was not provided for whisk.system/invokerHealthTestAction0
+[2024-03-26T00:14:10.530Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore] [GET] 'test_whisks' finding document: 'id: whisk.system/invokerHealthTestAction0' [marker:database_getDocument_start:9235371]
+[2024-03-26T00:14:10.589Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore]  [marker:database_getDocument_finish:9235430:59]
+[2024-03-26T00:14:10.646Z] [INFO] [#tid_sid_invokerHealth] [ContainerPool] containerStart containerState: cold container: None activations: 1 of max 1 action: invokerHealthTestAction0 namespace: whisk.system activationId: a5c1d243e0224f3b81d243e022ef3b41 [marker:invoker_containerStart.cold_counter:9235488]
+[2024-03-26T00:14:10.652Z] [INFO] [#tid_sid_invokerHealth] [KubernetesClient] launching pod wskowdev-invoker-55-11-whisksystem-invokerhealthtestaction0 (image:openwhisk/action-nodejs-v10:1.16.0, mem: 128) (timeout: 60s) [marker:invoker_kubeapi.create_start:9235493]
+[2024-03-26T00:14:14.073Z] [INFO] [#tid_sid_invokerHealth] [KubernetesClient]  [marker:invoker_kubeapi.create_finish:9238915:3422]
+[2024-03-26T00:14:14.116Z] [INFO] [#tid_sid_invokerHealth] [KubernetesContainer] sending initialization to ContainerId(wskowdev-invoker-55-11-whisksystem-invokerhealthtestaction0) ContainerAddress(10.244.28.76,8080) [marker:invoker_activationInit_start:9238957]
+[2024-03-26T00:14:14.152Z] [INFO] [#tid_sid_invokerHealth] [KubernetesContainer] initialization result: ok [marker:invoker_activationInit_finish:9238994:35]
+[2024-03-26T00:14:14.153Z] [INFO] [#tid_sid_unknown] [ContainerProxy] resending up to 0 from 0 buffered jobs
+[2024-03-26T00:14:14.153Z] [INFO] [#tid_sid_invokerHealth] [KubernetesContainer] sending arguments to /whisk.system/invokerHealthTestAction0 at ContainerId(wskowdev-invoker-55-11-whisksystem-invokerhealthtestaction0) ContainerAddress(10.244.28.76,8080) [marker:invoker_activationRun_start:9238995]
+[2024-03-26T00:14:14.159Z] [INFO] [#tid_sid_invokerHealth] [KubernetesContainer] running result: ok [marker:invoker_activationRun_finish:9239000:5]
+[2024-03-26T00:14:14.161Z] [INFO] [#tid_sid_invokerHealth] [ContainerProxy]  [marker:invoker_collectLogs_start:9239002]
+[2024-03-26T00:14:14.198Z] [INFO] [#tid_sid_invokerHealth] [ContainerProxy]  [marker:invoker_collectLogs_finish:9239039:35]
+[2024-03-26T00:14:14.200Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore] [PUT] 'test_activations' saving document: 'id: whisk.system/a5c1d243e0224f3b81d243e022ef3b41, rev: null' [marker:database_saveDocument_start:9239041]
+[2024-03-26T00:14:14.201Z] [INFO] [#tid_sid_dbBatcher] [CouchDbRestStore] 'test_activations' saving 1 documents [marker:database_saveDocumentBulk_start:9216725]
+[2024-03-26T00:14:14.207Z] [INFO] [#tid_sid_invokerHealth] [MessagingActiveAck] posted completion of activation a5c1d243e0224f3b81d243e022ef3b41
+[2024-03-26T00:14:14.219Z] [INFO] [#tid_sid_invokerHealth] [InvokerReactive]  [marker:invoker_activation_start:9239061]
+[2024-03-26T00:14:14.219Z] [WARN] [#tid_sid_invokerHealth] [InvokerReactive] revision was not provided for whisk.system/invokerHealthTestAction0
+[2024-03-26T00:14:14.219Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore] [GET] 'test_whisks' finding document: 'id: whisk.system/invokerHealthTestAction0' [marker:database_getDocument_start:9239061]
+[2024-03-26T00:14:14.232Z] [INFO] [#tid_sid_dbBatcher] [CouchDbRestStore]  [marker:database_saveDocumentBulk_finish:9216755:30]
+[2024-03-26T00:14:14.235Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore]  [marker:database_saveDocument_finish:9239076:34]
+[2024-03-26T00:14:14.239Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore]  [marker:database_getDocument_finish:9239081:20]
+[2024-03-26T00:14:14.242Z] [INFO] [#tid_sid_invokerHealth] [ContainerPool] containerStart containerState: warmed container: Some(ContainerId(wskowdev-invoker-55-11-whisksystem-invokerhealthtestaction0)) activations: 1 of max 1 action: invokerHealthTestAction0 namespace: whisk.system activationId: 103fdf53cdfa41a9bfdf53cdfa51a978 [marker:invoker_containerStart.warmed_counter:9239082]
+[2024-03-26T00:14:14.242Z] [INFO] [#tid_sid_invokerHealth] [KubernetesContainer] sending arguments to /whisk.system/invokerHealthTestAction0 at ContainerId(wskowdev-invoker-55-11-whisksystem-invokerhealthtestaction0) ContainerAddress(10.244.28.76,8080) [marker:invoker_activationRun_start:9239083]
+[2024-03-26T00:14:14.245Z] [INFO] [#tid_sid_invokerHealth] [KubernetesContainer] running result: ok [marker:invoker_activationRun_finish:9239085:2]
+[2024-03-26T00:14:14.245Z] [INFO] [#tid_sid_invokerHealth] [ContainerProxy]  [marker:invoker_collectLogs_start:9239086]
+[2024-03-26T00:14:14.262Z] [INFO] [#tid_sid_invokerHealth] [ContainerProxy]  [marker:invoker_collectLogs_finish:9239104:18]
+[2024-03-26T00:14:14.263Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore] [PUT] 'test_activations' saving document: 'id: whisk.system/103fdf53cdfa41a9bfdf53cdfa51a978, rev: null' [marker:database_saveDocument_start:9239105]
+[2024-03-26T00:14:14.264Z] [INFO] [#tid_sid_dbBatcher] [CouchDbRestStore] 'test_activations' saving 1 documents [marker:database_saveDocumentBulk_start:9216787]
+[2024-03-26T00:14:14.265Z] [INFO] [#tid_sid_invokerHealth] [MessagingActiveAck] posted completion of activation 103fdf53cdfa41a9bfdf53cdfa51a978
+[2024-03-26T00:14:14.285Z] [INFO] [#tid_sid_dbBatcher] [CouchDbRestStore]  [marker:database_saveDocumentBulk_finish:9216809:21]
+[2024-03-26T00:14:14.286Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore]  [marker:database_saveDocument_finish:9239128:23]
+[2024-03-26T00:15:42.030Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:9304553]
+[2024-03-26T00:15:42.082Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:9304606:53]
+[2024-03-26T00:15:42.082Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-26T00:20:42.051Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:9604574]
+[2024-03-26T00:20:42.117Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:9604641:67]
+[2024-03-26T00:20:42.117Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-26T00:24:14.356Z] [INFO] [#tid_sid_invokerNanny] [KubernetesClient] Deleting pod wskowdev-invoker-55-11-whisksystem-invokerhealthtestaction0 [marker:invoker_kubeapi.delete_start:9816879]
+[2024-03-26T00:24:14.504Z] [INFO] [#tid_sid_invokerNanny] [KubernetesClient]  [marker:invoker_kubeapi.delete_finish:9817028:149]
+[2024-03-26T00:25:42.072Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:9904595]
+[2024-03-26T00:25:42.136Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:9904658:63]
+[2024-03-26T00:25:42.138Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-26T00:30:42.092Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:10204614]
+[2024-03-26T00:30:58.365Z] [INFO] Message [akka.io.Dns$Resolved] from Actor[akka://invoker-actor-system/system/IO-DNS/inet-address/$d#1052722845] to Actor[akka://invoker-actor-system/system/IO-TCP/selectors/$a/51#1766421181] was not delivered. [4] dead letters encountered. If this is not an expected behavior, then [Actor[akka://invoker-actor-system/system/IO-TCP/selectors/$a/51#1766421181]] may have terminated unexpectedly, This logging can be turned off or adjusted with configuration settings 'akka.log-dead-letters' and 'akka.log-dead-letters-during-shutdown'.
+[2024-03-26T00:31:00.769Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:10223293:18678]
+[2024-03-26T00:31:00.770Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-26T00:31:24.265Z] [INFO] [#tid_sid_invokerHealth] [InvokerReactive]  [marker:invoker_activation_start:10269104]
+[2024-03-26T00:31:24.265Z] [WARN] [#tid_sid_invokerHealth] [InvokerReactive] revision was not provided for whisk.system/invokerHealthTestAction0
+[2024-03-26T00:31:24.266Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore] [GET] 'test_whisks' finding document: 'id: whisk.system/invokerHealthTestAction0' [marker:database_getDocument_start:10269105]
+[2024-03-26T00:31:26.325Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore]  [marker:database_getDocument_finish:10271167:2062]
+[2024-03-26T00:31:26.376Z] [INFO] [#tid_sid_invokerHealth] [ContainerPool] containerStart containerState: cold container: None activations: 1 of max 1 action: invokerHealthTestAction0 namespace: whisk.system activationId: 39964733c2dd42b1964733c2ddf2b157 [marker:invoker_containerStart.cold_counter:10271210]
+[2024-03-26T00:31:26.377Z] [INFO] [#tid_sid_invokerHealth] [KubernetesClient] launching pod wskowdev-invoker-55-12-whisksystem-invokerhealthtestaction0 (image:openwhisk/action-nodejs-v10:1.16.0, mem: 128) (timeout: 60s) [marker:invoker_kubeapi.create_start:10271218]
+[2024-03-26T00:31:30.902Z] [INFO] [#tid_sid_invokerHealth] [InvokerReactive]  [marker:invoker_activation_start:10275743]
+[2024-03-26T00:31:30.903Z] [WARN] [#tid_sid_invokerHealth] [InvokerReactive] revision was not provided for whisk.system/invokerHealthTestAction0
+[2024-03-26T00:31:30.903Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore] [GET] 'test_whisks' finding document: 'id: whisk.system/invokerHealthTestAction0' [marker:database_getDocument_start:10275743]
+[2024-03-26T00:31:30.917Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore]  [marker:database_getDocument_finish:10275758:15]
+[2024-03-26T00:31:30.972Z] [INFO] [#tid_sid_invokerHealth] [KubernetesClient] launching pod wskowdev-invoker-55-13-whisksystem-invokerhealthtestaction0 (image:openwhisk/action-nodejs-v10:1.16.0, mem: 128) (timeout: 60s) [marker:invoker_kubeapi.create_start:10275812]
+[2024-03-26T00:31:30.973Z] [INFO] [#tid_sid_invokerHealth] [ContainerPool] containerStart containerState: cold container: None activations: 1 of max 1 action: invokerHealthTestAction0 namespace: whisk.system activationId: 0520e6aa470b4367a0e6aa470ba36714 [marker:invoker_containerStart.cold_counter:10275814]
+[2024-03-26T00:31:31.744Z] [INFO] [#tid_sid_invokerHealth] [KubernetesClient]  [marker:invoker_kubeapi.create_finish:10276584:5366]
+[2024-03-26T00:31:31.779Z] [INFO] [#tid_sid_invokerHealth] [KubernetesContainer] sending initialization to ContainerId(wskowdev-invoker-55-12-whisksystem-invokerhealthtestaction0) ContainerAddress(10.244.26.79,8080) [marker:invoker_activationInit_start:10276620]
+[2024-03-26T00:31:31.828Z] [INFO] [#tid_sid_invokerHealth] [KubernetesContainer] initialization result: ok [marker:invoker_activationInit_finish:10276668:46]
+[2024-03-26T00:31:31.828Z] [INFO] [#tid_sid_unknown] [ContainerProxy] resending up to 0 from 0 buffered jobs
+[2024-03-26T00:31:31.828Z] [INFO] [#tid_sid_invokerHealth] [KubernetesContainer] sending arguments to /whisk.system/invokerHealthTestAction0 at ContainerId(wskowdev-invoker-55-12-whisksystem-invokerhealthtestaction0) ContainerAddress(10.244.26.79,8080) [marker:invoker_activationRun_start:10276668]
+[2024-03-26T00:31:31.836Z] [INFO] [#tid_sid_invokerHealth] [KubernetesContainer] running result: ok [marker:invoker_activationRun_finish:10276676:8]
+[2024-03-26T00:31:31.838Z] [INFO] [#tid_sid_invokerHealth] [ContainerProxy]  [marker:invoker_collectLogs_start:10276679]
+[2024-03-26T00:31:31.884Z] [INFO] [#tid_sid_invokerHealth] [ContainerProxy]  [marker:invoker_collectLogs_finish:10276724:44]
+[2024-03-26T00:31:31.884Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore] [PUT] 'test_activations' saving document: 'id: whisk.system/39964733c2dd42b1964733c2ddf2b157, rev: null' [marker:database_saveDocument_start:10276725]
+[2024-03-26T00:31:31.884Z] [INFO] [#tid_sid_dbBatcher] [CouchDbRestStore] 'test_activations' saving 1 documents [marker:database_saveDocumentBulk_start:10254408]
+[2024-03-26T00:31:31.890Z] [INFO] [#tid_sid_invokerHealth] [MessagingActiveAck] posted completion of activation 39964733c2dd42b1964733c2ddf2b157
+[2024-03-26T00:31:31.903Z] [INFO] [#tid_sid_invokerHealth] [InvokerReactive]  [marker:invoker_activation_start:10276745]
+[2024-03-26T00:31:31.903Z] [WARN] [#tid_sid_invokerHealth] [InvokerReactive] revision was not provided for whisk.system/invokerHealthTestAction0
+[2024-03-26T00:31:31.904Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore] [GET] 'test_whisks' finding document: 'id: whisk.system/invokerHealthTestAction0' [marker:database_getDocument_start:10276745]
+[2024-03-26T00:31:31.916Z] [INFO] [#tid_sid_dbBatcher] [CouchDbRestStore]  [marker:database_saveDocumentBulk_finish:10254439:31]
+[2024-03-26T00:31:31.919Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore]  [marker:database_saveDocument_finish:10276760:35]
+[2024-03-26T00:31:31.939Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore]  [marker:database_getDocument_finish:10276780:35]
+[2024-03-26T00:31:31.943Z] [INFO] [#tid_sid_invokerHealth] [ContainerPool] containerStart containerState: warmed container: Some(ContainerId(wskowdev-invoker-55-12-whisksystem-invokerhealthtestaction0)) activations: 1 of max 1 action: invokerHealthTestAction0 namespace: whisk.system activationId: fb2ec4a7f38e4d9baec4a7f38edd9bf8 [marker:invoker_containerStart.warmed_counter:10276784]
+[2024-03-26T00:31:31.944Z] [INFO] [#tid_sid_invokerHealth] [KubernetesContainer] sending arguments to /whisk.system/invokerHealthTestAction0 at ContainerId(wskowdev-invoker-55-12-whisksystem-invokerhealthtestaction0) ContainerAddress(10.244.26.79,8080) [marker:invoker_activationRun_start:10276784]
+[2024-03-26T00:31:31.953Z] [INFO] [#tid_sid_invokerHealth] [KubernetesContainer] running result: ok [marker:invoker_activationRun_finish:10276793:8]
+[2024-03-26T00:31:31.954Z] [INFO] [#tid_sid_invokerHealth] [ContainerProxy]  [marker:invoker_collectLogs_start:10276794]
+[2024-03-26T00:31:31.972Z] [INFO] [#tid_sid_invokerHealth] [ContainerProxy]  [marker:invoker_collectLogs_finish:10276814:20]
+[2024-03-26T00:31:31.973Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore] [PUT] 'test_activations' saving document: 'id: whisk.system/fb2ec4a7f38e4d9baec4a7f38edd9bf8, rev: null' [marker:database_saveDocument_start:10276815]
+[2024-03-26T00:31:31.974Z] [INFO] [#tid_sid_dbBatcher] [CouchDbRestStore] 'test_activations' saving 1 documents [marker:database_saveDocumentBulk_start:10254498]
+[2024-03-26T00:31:31.976Z] [INFO] [#tid_sid_invokerHealth] [MessagingActiveAck] posted completion of activation fb2ec4a7f38e4d9baec4a7f38edd9bf8
+[2024-03-26T00:31:31.995Z] [INFO] [#tid_sid_dbBatcher] [CouchDbRestStore]  [marker:database_saveDocumentBulk_finish:10254519:21]
+[2024-03-26T00:31:31.996Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore]  [marker:database_saveDocument_finish:10276838:23]
+[2024-03-26T00:31:34.082Z] [INFO] [#tid_sid_invokerHealth] [KubernetesClient]  [marker:invoker_kubeapi.create_finish:10278924:3112]
+[2024-03-26T00:31:34.149Z] [INFO] [#tid_sid_invokerHealth] [KubernetesContainer] sending initialization to ContainerId(wskowdev-invoker-55-13-whisksystem-invokerhealthtestaction0) ContainerAddress(10.244.26.80,8080) [marker:invoker_activationInit_start:10278991]
+[2024-03-26T00:31:34.193Z] [INFO] [#tid_sid_invokerHealth] [KubernetesContainer] initialization result: ok [marker:invoker_activationInit_finish:10279035:42]
+[2024-03-26T00:31:34.193Z] [INFO] [#tid_sid_unknown] [ContainerProxy] resending up to 0 from 0 buffered jobs
+[2024-03-26T00:31:34.194Z] [INFO] [#tid_sid_invokerHealth] [KubernetesContainer] sending arguments to /whisk.system/invokerHealthTestAction0 at ContainerId(wskowdev-invoker-55-13-whisksystem-invokerhealthtestaction0) ContainerAddress(10.244.26.80,8080) [marker:invoker_activationRun_start:10279035]
+[2024-03-26T00:31:34.203Z] [INFO] [#tid_sid_invokerHealth] [KubernetesContainer] running result: ok [marker:invoker_activationRun_finish:10279044:8]
+[2024-03-26T00:31:34.205Z] [INFO] [#tid_sid_invokerHealth] [ContainerProxy]  [marker:invoker_collectLogs_start:10279046]
+[2024-03-26T00:31:34.226Z] [INFO] [#tid_sid_invokerHealth] [ContainerProxy]  [marker:invoker_collectLogs_finish:10279068:21]
+[2024-03-26T00:31:34.227Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore] [PUT] 'test_activations' saving document: 'id: whisk.system/0520e6aa470b4367a0e6aa470ba36714, rev: null' [marker:database_saveDocument_start:10279069]
+[2024-03-26T00:31:34.229Z] [INFO] [#tid_sid_dbBatcher] [CouchDbRestStore] 'test_activations' saving 1 documents [marker:database_saveDocumentBulk_start:10256752]
+[2024-03-26T00:31:34.233Z] [INFO] [#tid_sid_invokerHealth] [MessagingActiveAck] posted completion of activation 0520e6aa470b4367a0e6aa470ba36714
+[2024-03-26T00:31:34.254Z] [INFO] [#tid_sid_dbBatcher] [CouchDbRestStore]  [marker:database_saveDocumentBulk_finish:10256777:25]
+[2024-03-26T00:31:34.257Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore]  [marker:database_saveDocument_finish:10279098:29]
+[2024-03-26T00:35:42.112Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:10504635]
+[2024-03-26T00:35:42.176Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:10504699:63]
+[2024-03-26T00:35:42.176Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-26T00:36:45.202Z] [INFO] [#tid_sid_invokerHealth] [InvokerReactive]  [marker:invoker_activation_start:10590043]
+[2024-03-26T00:36:45.202Z] [WARN] [#tid_sid_invokerHealth] [InvokerReactive] revision was not provided for whisk.system/invokerHealthTestAction0
+[2024-03-26T00:36:45.202Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore] [GET] 'test_whisks' finding document: 'id: whisk.system/invokerHealthTestAction0' [marker:database_getDocument_start:10590044]
+[2024-03-26T00:36:45.257Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore]  [marker:database_getDocument_finish:10590098:54]
+[2024-03-26T00:36:45.259Z] [INFO] [#tid_sid_invokerHealth] [ContainerPool] containerStart containerState: warmed container: Some(ContainerId(wskowdev-invoker-55-12-whisksystem-invokerhealthtestaction0)) activations: 1 of max 1 action: invokerHealthTestAction0 namespace: whisk.system activationId: b3e0734c7b764c43a0734c7b768c431b [marker:invoker_containerStart.warmed_counter:10590101]
+[2024-03-26T00:36:45.264Z] [INFO] [#tid_sid_invokerHealth] [KubernetesContainer] sending arguments to /whisk.system/invokerHealthTestAction0 at ContainerId(wskowdev-invoker-55-12-whisksystem-invokerhealthtestaction0) ContainerAddress(10.244.26.79,8080) [marker:invoker_activationRun_start:10590106]
+[2024-03-26T00:36:45.277Z] [INFO] [#tid_sid_invokerHealth] [KubernetesContainer] running result: ok [marker:invoker_activationRun_finish:10590119:12]
+[2024-03-26T00:36:45.278Z] [INFO] [#tid_sid_invokerHealth] [ContainerProxy]  [marker:invoker_collectLogs_start:10590120]
+[2024-03-26T00:36:45.400Z] [INFO] [#tid_sid_invokerHealth] [ContainerProxy]  [marker:invoker_collectLogs_finish:10590242:121]
+[2024-03-26T00:36:45.401Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore] [PUT] 'test_activations' saving document: 'id: whisk.system/b3e0734c7b764c43a0734c7b768c431b, rev: null' [marker:database_saveDocument_start:10590243]
+[2024-03-26T00:36:45.401Z] [INFO] [#tid_sid_dbBatcher] [CouchDbRestStore] 'test_activations' saving 1 documents [marker:database_saveDocumentBulk_start:10567925]
+[2024-03-26T00:36:45.414Z] [INFO] [#tid_sid_invokerHealth] [InvokerReactive]  [marker:invoker_activation_start:10590256]
+[2024-03-26T00:36:45.415Z] [WARN] [#tid_sid_invokerHealth] [InvokerReactive] revision was not provided for whisk.system/invokerHealthTestAction0
+[2024-03-26T00:36:45.415Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore] [GET] 'test_whisks' finding document: 'id: whisk.system/invokerHealthTestAction0' [marker:database_getDocument_start:10590256]
+[2024-03-26T00:36:45.441Z] [INFO] [#tid_sid_dbBatcher] [CouchDbRestStore]  [marker:database_saveDocumentBulk_finish:10567965:40]
+[2024-03-26T00:36:45.443Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore]  [marker:database_saveDocument_finish:10590285:42]
+[2024-03-26T00:36:45.449Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore]  [marker:database_getDocument_finish:10590291:34]
+[2024-03-26T00:36:45.451Z] [INFO] [#tid_sid_invokerHealth] [ContainerPool] containerStart containerState: warmed container: Some(ContainerId(wskowdev-invoker-55-13-whisksystem-invokerhealthtestaction0)) activations: 1 of max 1 action: invokerHealthTestAction0 namespace: whisk.system activationId: 57a424e65f68446ea424e65f68e46e42 [marker:invoker_containerStart.warmed_counter:10590292]
+[2024-03-26T00:36:45.453Z] [INFO] [#tid_sid_invokerHealth] [KubernetesContainer] sending arguments to /whisk.system/invokerHealthTestAction0 at ContainerId(wskowdev-invoker-55-13-whisksystem-invokerhealthtestaction0) ContainerAddress(10.244.26.80,8080) [marker:invoker_activationRun_start:10590295]
+[2024-03-26T00:36:45.465Z] [INFO] [#tid_sid_invokerHealth] [KubernetesContainer] running result: ok [marker:invoker_activationRun_finish:10590307:11]
+[2024-03-26T00:36:45.466Z] [INFO] [#tid_sid_invokerHealth] [ContainerProxy]  [marker:invoker_collectLogs_start:10590308]
+[2024-03-26T00:36:45.488Z] [INFO] [#tid_sid_invokerHealth] [ContainerProxy]  [marker:invoker_collectLogs_finish:10590329:21]
+[2024-03-26T00:36:45.489Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore] [PUT] 'test_activations' saving document: 'id: whisk.system/57a424e65f68446ea424e65f68e46e42, rev: null' [marker:database_saveDocument_start:10590331]
+[2024-03-26T00:36:45.492Z] [INFO] [#tid_sid_dbBatcher] [CouchDbRestStore] 'test_activations' saving 1 documents [marker:database_saveDocumentBulk_start:10568014]
+[2024-03-26T00:36:45.495Z] [INFO] [#tid_sid_invokerHealth] [MessagingActiveAck] posted completion of activation 57a424e65f68446ea424e65f68e46e42
+[2024-03-26T00:36:45.496Z] [INFO] [#tid_sid_invokerHealth] [MessagingActiveAck] posted completion of activation b3e0734c7b764c43a0734c7b768c431b
+[2024-03-26T00:36:45.515Z] [INFO] [#tid_sid_dbBatcher] [CouchDbRestStore]  [marker:database_saveDocumentBulk_finish:10568039:23]
+[2024-03-26T00:36:45.516Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore]  [marker:database_saveDocument_finish:10590358:27]
+[2024-03-26T00:39:50.307Z] [INFO] [#tid_sid_invokerHealth] [InvokerReactive]  [marker:invoker_activation_start:10775145]
+[2024-03-26T00:39:50.307Z] [WARN] [#tid_sid_invokerHealth] [InvokerReactive] revision was not provided for whisk.system/invokerHealthTestAction0
+[2024-03-26T00:39:50.308Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore] [GET] 'test_whisks' finding document: 'id: whisk.system/invokerHealthTestAction0' [marker:database_getDocument_start:10775147]
+[2024-03-26T00:40:00.591Z] [INFO] Message [akka.io.Dns$Resolved] from Actor[akka://invoker-actor-system/system/IO-DNS/inet-address/$d#1052722845] to Actor[akka://invoker-actor-system/system/IO-TCP/selectors/$a/58#1038215835] was not delivered. [5] dead letters encountered. If this is not an expected behavior, then [Actor[akka://invoker-actor-system/system/IO-TCP/selectors/$a/58#1038215835]] may have terminated unexpectedly, This logging can be turned off or adjusted with configuration settings 'akka.log-dead-letters' and 'akka.log-dead-letters-during-shutdown'.
+[2024-03-26T00:40:06.495Z] [INFO] [#tid_sid_invokerHealth] [InvokerReactive]  [marker:invoker_activation_start:10791335]
+[2024-03-26T00:40:06.495Z] [WARN] [#tid_sid_invokerHealth] [InvokerReactive] revision was not provided for whisk.system/invokerHealthTestAction0
+[2024-03-26T00:40:06.495Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore] [GET] 'test_whisks' finding document: 'id: whisk.system/invokerHealthTestAction0' [marker:database_getDocument_start:10791335]
+[2024-03-26T00:40:16.530Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore]  [marker:database_getDocument_finish:10801371:10036]
+[2024-03-26T00:40:16.532Z] [INFO] [#tid_sid_invokerHealth] [ContainerPool] containerStart containerState: warmed container: Some(ContainerId(wskowdev-invoker-55-12-whisksystem-invokerhealthtestaction0)) activations: 1 of max 1 action: invokerHealthTestAction0 namespace: whisk.system activationId: f732f6caed554888b2f6caed55d888c9 [marker:invoker_containerStart.warmed_counter:10801374]
+[2024-03-26T00:40:16.535Z] [INFO] [#tid_sid_invokerHealth] [KubernetesContainer] sending arguments to /whisk.system/invokerHealthTestAction0 at ContainerId(wskowdev-invoker-55-12-whisksystem-invokerhealthtestaction0) ContainerAddress(10.244.26.79,8080) [marker:invoker_activationRun_start:10801377]
+[2024-03-26T00:40:19.300Z] [INFO] [#tid_sid_invokerHealth] [KubernetesContainer] running result: ok [marker:invoker_activationRun_finish:10804142:2764]
+[2024-03-26T00:40:19.301Z] [INFO] [#tid_sid_invokerHealth] [ContainerProxy]  [marker:invoker_collectLogs_start:10804143]
+[2024-03-26T00:40:20.826Z] [INFO] [#tid_sid_invokerHealth] [InvokerReactive]  [marker:invoker_activation_start:10805668]
+[2024-03-26T00:40:20.826Z] [WARN] [#tid_sid_invokerHealth] [InvokerReactive] revision was not provided for whisk.system/invokerHealthTestAction0
+[2024-03-26T00:40:20.827Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore] [GET] 'test_whisks' finding document: 'id: whisk.system/invokerHealthTestAction0' [marker:database_getDocument_start:10805668]
+[2024-03-26T00:40:20.856Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore]  [marker:database_getDocument_finish:10805698:29]
+[2024-03-26T00:40:20.859Z] [INFO] [#tid_sid_invokerHealth] [ContainerPool] containerStart containerState: warmed container: Some(ContainerId(wskowdev-invoker-55-13-whisksystem-invokerhealthtestaction0)) activations: 1 of max 1 action: invokerHealthTestAction0 namespace: whisk.system activationId: 2370fb125d2548d8b0fb125d25e8d8d0 [marker:invoker_containerStart.warmed_counter:10805700]
+[2024-03-26T00:40:20.862Z] [INFO] [#tid_sid_invokerHealth] [KubernetesContainer] sending arguments to /whisk.system/invokerHealthTestAction0 at ContainerId(wskowdev-invoker-55-13-whisksystem-invokerhealthtestaction0) ContainerAddress(10.244.26.80,8080) [marker:invoker_activationRun_start:10805703]
+[2024-03-26T00:40:20.877Z] [INFO] [#tid_sid_invokerHealth] [KubernetesContainer] running result: ok [marker:invoker_activationRun_finish:10805717:13]
+[2024-03-26T00:40:20.878Z] [INFO] [#tid_sid_invokerHealth] [ContainerProxy]  [marker:invoker_collectLogs_start:10805718]
+[2024-03-26T00:40:20.985Z] [INFO] [#tid_sid_invokerHealth] [ContainerProxy]  [marker:invoker_collectLogs_finish:10805827:109]
+[2024-03-26T00:40:20.987Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore] [PUT] 'test_activations' saving document: 'id: whisk.system/2370fb125d2548d8b0fb125d25e8d8d0, rev: null' [marker:database_saveDocument_start:10805828]
+[2024-03-26T00:40:20.987Z] [INFO] [#tid_sid_dbBatcher] [CouchDbRestStore] 'test_activations' saving 1 documents [marker:database_saveDocumentBulk_start:10783511]
+[2024-03-26T00:40:21.000Z] [INFO] [#tid_sid_invokerHealth] [MessagingActiveAck] posted completion of activation 2370fb125d2548d8b0fb125d25e8d8d0
+[2024-03-26T00:40:21.029Z] [INFO] [#tid_sid_dbBatcher] [CouchDbRestStore]  [marker:database_saveDocumentBulk_finish:10783553:42]
+[2024-03-26T00:40:21.030Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore]  [marker:database_saveDocument_finish:10805872:44]
+[2024-03-26T00:40:21.053Z] [INFO] [#tid_sid_invokerHealth] [InvokerReactive]  [marker:invoker_activation_start:10805895]
+[2024-03-26T00:40:21.054Z] [WARN] [#tid_sid_invokerHealth] [InvokerReactive] revision was not provided for whisk.system/invokerHealthTestAction0
+[2024-03-26T00:40:21.054Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore] [GET] 'test_whisks' finding document: 'id: whisk.system/invokerHealthTestAction0' [marker:database_getDocument_start:10805895]
+[2024-03-26T00:40:21.071Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore]  [marker:database_getDocument_finish:10805913:18]
+[2024-03-26T00:40:21.073Z] [INFO] [#tid_sid_invokerHealth] [ContainerPool] containerStart containerState: warmed container: Some(ContainerId(wskowdev-invoker-55-13-whisksystem-invokerhealthtestaction0)) activations: 1 of max 1 action: invokerHealthTestAction0 namespace: whisk.system activationId: 5d401707ba3b49e7801707ba3b29e760 [marker:invoker_containerStart.warmed_counter:10805915]
+[2024-03-26T00:40:21.080Z] [INFO] [#tid_sid_invokerHealth] [KubernetesContainer] sending arguments to /whisk.system/invokerHealthTestAction0 at ContainerId(wskowdev-invoker-55-13-whisksystem-invokerhealthtestaction0) ContainerAddress(10.244.26.80,8080) [marker:invoker_activationRun_start:10805922]
+[2024-03-26T00:40:21.096Z] [INFO] [#tid_sid_invokerHealth] [KubernetesContainer] running result: ok [marker:invoker_activationRun_finish:10805938:15]
+[2024-03-26T00:40:21.097Z] [INFO] [#tid_sid_invokerHealth] [ContainerProxy]  [marker:invoker_collectLogs_start:10805939]
+[2024-03-26T00:40:21.119Z] [INFO] [#tid_sid_invokerHealth] [ContainerProxy]  [marker:invoker_collectLogs_finish:10805961:22]
+[2024-03-26T00:40:21.120Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore] [PUT] 'test_activations' saving document: 'id: whisk.system/5d401707ba3b49e7801707ba3b29e760, rev: null' [marker:database_saveDocument_start:10805962]
+[2024-03-26T00:40:21.121Z] [INFO] [#tid_sid_dbBatcher] [CouchDbRestStore] 'test_activations' saving 1 documents [marker:database_saveDocumentBulk_start:10783645]
+[2024-03-26T00:40:21.123Z] [INFO] [#tid_sid_invokerHealth] [MessagingActiveAck] posted completion of activation 5d401707ba3b49e7801707ba3b29e760
+[2024-03-26T00:40:21.157Z] [INFO] [#tid_sid_dbBatcher] [CouchDbRestStore]  [marker:database_saveDocumentBulk_finish:10783681:36]
+[2024-03-26T00:40:21.158Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore]  [marker:database_saveDocument_finish:10806000:38]
+[2024-03-26T00:40:21.321Z] [INFO] [#tid_sid_invokerHealth] [ContainerProxy]  [marker:invoker_collectLogs_finish:10806162:2019]
+[2024-03-26T00:40:21.323Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore] [PUT] 'test_activations' saving document: 'id: whisk.system/f732f6caed554888b2f6caed55d888c9, rev: null' [marker:database_saveDocument_start:10806164]
+[2024-03-26T00:40:21.323Z] [INFO] [#tid_sid_dbBatcher] [CouchDbRestStore] 'test_activations' saving 1 documents [marker:database_saveDocumentBulk_start:10783847]
+[2024-03-26T00:40:21.326Z] [INFO] [#tid_sid_invokerHealth] [MessagingActiveAck] posted completion of activation f732f6caed554888b2f6caed55d888c9
+[2024-03-26T00:40:21.348Z] [INFO] [#tid_sid_dbBatcher] [CouchDbRestStore]  [marker:database_saveDocumentBulk_finish:10783871:24]
+[2024-03-26T00:40:21.349Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore]  [marker:database_saveDocument_finish:10806191:27]
+[2024-03-26T00:40:26.714Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore]  [marker:database_getDocument_finish:10811556:36409]
+[2024-03-26T00:40:26.717Z] [INFO] [#tid_sid_invokerHealth] [ContainerPool] containerStart containerState: warmed container: Some(ContainerId(wskowdev-invoker-55-13-whisksystem-invokerhealthtestaction0)) activations: 1 of max 1 action: invokerHealthTestAction0 namespace: whisk.system activationId: 9a5328e68d1741369328e68d1781369e [marker:invoker_containerStart.warmed_counter:10811558]
+[2024-03-26T00:40:26.718Z] [INFO] [#tid_sid_invokerHealth] [KubernetesContainer] sending arguments to /whisk.system/invokerHealthTestAction0 at ContainerId(wskowdev-invoker-55-13-whisksystem-invokerhealthtestaction0) ContainerAddress(10.244.26.80,8080) [marker:invoker_activationRun_start:10811560]
+[2024-03-26T00:40:26.725Z] [INFO] [#tid_sid_invokerHealth] [KubernetesContainer] running result: ok [marker:invoker_activationRun_finish:10811567:6]
+[2024-03-26T00:40:26.726Z] [INFO] [#tid_sid_invokerHealth] [ContainerProxy]  [marker:invoker_collectLogs_start:10811568]
+[2024-03-26T00:40:26.750Z] [INFO] [#tid_sid_invokerHealth] [ContainerProxy]  [marker:invoker_collectLogs_finish:10811591:23]
+[2024-03-26T00:40:26.750Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore] [PUT] 'test_activations' saving document: 'id: whisk.system/9a5328e68d1741369328e68d1781369e, rev: null' [marker:database_saveDocument_start:10811592]
+[2024-03-26T00:40:26.751Z] [INFO] [#tid_sid_dbBatcher] [CouchDbRestStore] 'test_activations' saving 1 documents [marker:database_saveDocumentBulk_start:10789275]
+[2024-03-26T00:40:26.754Z] [INFO] [#tid_sid_invokerHealth] [MessagingActiveAck] posted completion of activation 9a5328e68d1741369328e68d1781369e
+[2024-03-26T00:40:26.774Z] [INFO] [#tid_sid_dbBatcher] [CouchDbRestStore]  [marker:database_saveDocumentBulk_finish:10789297:22]
+[2024-03-26T00:40:26.777Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore]  [marker:database_saveDocument_finish:10811618:26]
+[2024-03-26T00:40:42.132Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:10804654]
+[2024-03-26T00:40:42.158Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:10804679:25]
+[2024-03-26T00:40:42.158Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-26T00:45:42.151Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:11104674]
+[2024-03-26T00:45:42.229Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:11104753:77]
+[2024-03-26T00:45:42.229Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-26T00:50:21.417Z] [INFO] [#tid_sid_invokerNanny] [KubernetesClient] Deleting pod wskowdev-invoker-55-12-whisksystem-invokerhealthtestaction0 [marker:invoker_kubeapi.delete_start:11383940]
+[2024-03-26T00:50:21.544Z] [INFO] [#tid_sid_invokerNanny] [KubernetesClient]  [marker:invoker_kubeapi.delete_finish:11384067:126]
+[2024-03-26T00:50:26.841Z] [INFO] [#tid_sid_invokerNanny] [KubernetesClient] Deleting pod wskowdev-invoker-55-13-whisksystem-invokerhealthtestaction0 [marker:invoker_kubeapi.delete_start:11389365]
+[2024-03-26T00:50:26.877Z] [INFO] [#tid_sid_invokerNanny] [KubernetesClient]  [marker:invoker_kubeapi.delete_finish:11389401:36]
+[2024-03-26T00:50:42.184Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:11404704]
+[2024-03-26T00:50:42.247Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:11404770:66]
+[2024-03-26T00:50:42.248Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-26T00:55:42.201Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:11704724]
+[2024-03-26T00:55:42.254Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:11704777:52]
+[2024-03-26T00:55:42.254Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-26T01:00:42.221Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:12004744]
+[2024-03-26T01:00:42.283Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:12004807:62]
+[2024-03-26T01:00:42.284Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-26T01:02:07.556Z] [INFO] [#tid_sid_invokerHealth] [InvokerReactive]  [marker:invoker_activation_start:12112397]
+[2024-03-26T01:02:07.557Z] [WARN] [#tid_sid_invokerHealth] [InvokerReactive] revision was not provided for whisk.system/invokerHealthTestAction0
+[2024-03-26T01:02:07.558Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore] [GET] 'test_whisks' finding document: 'id: whisk.system/invokerHealthTestAction0' [marker:database_getDocument_start:12112400]
+[2024-03-26T01:02:17.730Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore]  [marker:database_getDocument_finish:12122571:10171]
+[2024-03-26T01:02:17.788Z] [INFO] [#tid_sid_invokerHealth] [ContainerPool] containerStart containerState: cold container: None activations: 1 of max 1 action: invokerHealthTestAction0 namespace: whisk.system activationId: 5e7940a5a5df4098b940a5a5dfa09880 [marker:invoker_containerStart.cold_counter:12122630]
+[2024-03-26T01:02:17.794Z] [INFO] [#tid_sid_invokerHealth] [KubernetesClient] launching pod wskowdev-invoker-55-14-whisksystem-invokerhealthtestaction0 (image:openwhisk/action-nodejs-v10:1.16.0, mem: 128) (timeout: 60s) [marker:invoker_kubeapi.create_start:12122636]
+[2024-03-26T01:02:23.906Z] [ERROR] [#tid_sid_invokerHealth] [KubernetesClient] Failed create pod for 'wskowdev-invoker-55-14-whisksystem-invokerhealthtestaction0': class io.fabric8.kubernetes.client.KubernetesClientException (Caused by: okhttp3.internal.http2.StreamResetException: stream was reset: PROTOCOL_ERROR) - Operation: [create]  for kind: [Pod]  with name: [null]  in namespace: [openwhisk]  failed.; stacktrace: io.fabric8.kubernetes.client.KubernetesClientException: Operation: [create]  for kind: [Pod]  with name: [null]  in namespace: [openwhisk]  failed.
+	at io.fabric8.kubernetes.client.KubernetesClientException.launderThrowable(KubernetesClientException.java:64)
+	at io.fabric8.kubernetes.client.KubernetesClientException.launderThrowable(KubernetesClientException.java:72)
+	at io.fabric8.kubernetes.client.dsl.base.BaseOperation.create(BaseOperation.java:329)
+	at io.fabric8.kubernetes.client.dsl.base.BaseOperation.create(BaseOperation.java:322)
+	at org.apache.openwhisk.core.containerpool.kubernetes.KubernetesClient.$anonfun$run$3(KubernetesClient.scala:157)
+	at org.apache.openwhisk.core.containerpool.kubernetes.KubernetesClient$$Lambda$1835/000000001C3949E0.apply(Unknown Source)
+	at scala.util.Try$.apply(Try.scala:213)
+	at org.apache.openwhisk.core.containerpool.kubernetes.KubernetesClient.run(KubernetesClient.scala:156)
+	at org.apache.openwhisk.core.containerpool.kubernetes.KubernetesContainer$.create(KubernetesContainer.scala:73)
+	at org.apache.openwhisk.core.containerpool.kubernetes.KubernetesContainerFactory.createContainer(KubernetesContainerFactory.scala:79)
+	at org.apache.openwhisk.core.containerpool.ContainerFactory.createContainer(ContainerFactory.scala:108)
+	at org.apache.openwhisk.core.containerpool.ContainerFactory.createContainer$(ContainerFactory.scala:100)
+	at org.apache.openwhisk.core.containerpool.kubernetes.KubernetesContainerFactory.createContainer(KubernetesContainerFactory.scala:43)
+	at org.apache.openwhisk.core.invoker.InvokerReactive.$anonfun$childFactory$2(InvokerReactive.scala:153)
+	at org.apache.openwhisk.core.invoker.InvokerReactive.$anonfun$childFactory$2$adapted(InvokerReactive.scala:153)
+	at org.apache.openwhisk.core.invoker.InvokerReactive$$Lambda$1696/000000001855FA30.apply(Unknown Source)
+	at org.apache.openwhisk.core.containerpool.ContainerProxy$$anonfun$1.applyOrElse(ContainerProxy.scala:312)
+	at org.apache.openwhisk.core.containerpool.ContainerProxy$$anonfun$1.applyOrElse(ContainerProxy.scala:283)
+	at scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:38)
+	at akka.actor.FSM.processEvent(FSM.scala:707)
+	at akka.actor.FSM.processEvent$(FSM.scala:704)
+	at org.apache.openwhisk.core.containerpool.ContainerProxy.processEvent(ContainerProxy.scala:248)
+	at akka.actor.FSM.akka$actor$FSM$$processMsg(FSM.scala:701)
+	at akka.actor.FSM$$anonfun$receive$1.applyOrElse(FSM.scala:695)
+	at akka.actor.Actor.aroundReceive(Actor.scala:539)
+	at akka.actor.Actor.aroundReceive$(Actor.scala:537)
+	at org.apache.openwhisk.core.containerpool.ContainerProxy.aroundReceive(ContainerProxy.scala:248)
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:612)
+	at akka.actor.ActorCell.invoke(ActorCell.scala:581)
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:268)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:229)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:836)
+Caused by: okhttp3.internal.http2.StreamResetException: stream was reset: PROTOCOL_ERROR
+	at okhttp3.internal.http2.Http2Stream.takeHeaders(Http2Stream.java:158)
+	at okhttp3.internal.http2.Http2Codec.readResponseHeaders(Http2Codec.java:131)
+	at okhttp3.internal.http.CallServerInterceptor.intercept(CallServerInterceptor.java:88)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
+	at okhttp3.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.java:45)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
+	at okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.java:93)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
+	at okhttp3.internal.http.BridgeInterceptor.intercept(BridgeInterceptor.java:93)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
+	at okhttp3.internal.http.RetryAndFollowUpInterceptor.intercept(RetryAndFollowUpInterceptor.java:126)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
+	at io.fabric8.kubernetes.client.utils.BackwardsCompatibilityInterceptor.intercept(BackwardsCompatibilityInterceptor.java:119)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
+	at io.fabric8.kubernetes.client.utils.ImpersonatorInterceptor.intercept(ImpersonatorInterceptor.java:68)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
+	at io.fabric8.kubernetes.client.utils.HttpClientUtils.lambda$createHttpClient$3(HttpClientUtils.java:110)
+	at io.fabric8.kubernetes.client.utils.HttpClientUtils$$Lambda$1023/00000000AA270950.intercept(Unknown Source)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
+	at okhttp3.RealCall.getResponseWithInterceptorChain(RealCall.java:254)
+	at okhttp3.RealCall.execute(RealCall.java:92)
+	at io.fabric8.kubernetes.client.dsl.base.OperationSupport.handleResponse(OperationSupport.java:404)
+	at io.fabric8.kubernetes.client.dsl.base.OperationSupport.handleResponse(OperationSupport.java:365)
+	at io.fabric8.kubernetes.client.dsl.base.OperationSupport.handleCreate(OperationSupport.java:234)
+	at io.fabric8.kubernetes.client.dsl.base.BaseOperation.handleCreate(BaseOperation.java:796)
+	at io.fabric8.kubernetes.client.dsl.base.BaseOperation.create(BaseOperation.java:326)
+	... 31 more
+ [marker:invoker_kubeapi.create_error:12128747:6111]
+[2024-03-26T01:02:23.907Z] [INFO] [#tid_sid_invokerHealth] [KubernetesContainer] Deleting failed pod 'wskowdev-invoker-55-14-whisksystem-invokerhealthtestaction0' after: class org.apache.openwhisk.core.containerpool.kubernetes.KubernetesPodApiException - Pod was not created at apiserver: io.fabric8.kubernetes.client.KubernetesClientException: Operation: [create]  for kind: [Pod]  with name: [null]  in namespace: [openwhisk]  failed.
+[2024-03-26T01:02:23.907Z] [INFO] [#tid_sid_invokerHealth] [KubernetesClient] Deleting pod wskowdev-invoker-55-14-whisksystem-invokerhealthtestaction0 [marker:invoker_kubeapi.delete_start:12128749]
+[2024-03-26T01:02:28.972Z] [INFO] [#tid_sid_invokerHealth] [KubernetesClient]  [marker:invoker_kubeapi.delete_finish:12133813:5064]
+[2024-03-26T01:02:28.975Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore] [PUT] 'test_activations' saving document: 'id: whisk.system/5e7940a5a5df4098b940a5a5dfa09880, rev: null' [marker:database_saveDocument_start:12133816]
+[2024-03-26T01:02:28.975Z] [INFO] [#tid_sid_dbBatcher] [CouchDbRestStore] 'test_activations' saving 1 documents [marker:database_saveDocumentBulk_start:12111499]
+[2024-03-26T01:02:28.976Z] [ERROR] [#tid_sid_unknown] [ContainerProxy] Failed to start cold container, queued activations will be aborted.
+[2024-03-26T01:02:28.977Z] [INFO] [#tid_sid_unknown] [ContainerProxy] aborting 0 queued activations after failed init or failed cold start
+[2024-03-26T01:02:29.761Z] [INFO] [#tid_sid_dbBatcher] [CouchDbRestStore]  [marker:database_saveDocumentBulk_finish:12112285:786]
+[2024-03-26T01:02:29.762Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore]  [marker:database_saveDocument_finish:12134604:788]
+[2024-03-26T01:02:30.540Z] [INFO] [#tid_sid_invokerHealth] [MessagingActiveAck] posted combined of activation 5e7940a5a5df4098b940a5a5dfa09880
+[2024-03-26T01:02:39.446Z] [INFO] [#tid_sid_invokerHealth] [InvokerReactive]  [marker:invoker_activation_start:12144288]
+[2024-03-26T01:02:39.446Z] [WARN] [#tid_sid_invokerHealth] [InvokerReactive] revision was not provided for whisk.system/invokerHealthTestAction0
+[2024-03-26T01:02:39.446Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore] [GET] 'test_whisks' finding document: 'id: whisk.system/invokerHealthTestAction0' [marker:database_getDocument_start:12144288]
+[2024-03-26T01:02:39.462Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore]  [marker:database_getDocument_finish:12144303:15]
+[2024-03-26T01:02:39.501Z] [INFO] [#tid_sid_invokerHealth] [ContainerPool] containerStart containerState: cold container: None activations: 1 of max 1 action: invokerHealthTestAction0 namespace: whisk.system activationId: d7a95cf50e9d49cba95cf50e9d29cb9c [marker:invoker_containerStart.cold_counter:12144343]
+[2024-03-26T01:02:39.505Z] [INFO] [#tid_sid_invokerHealth] [KubernetesClient] launching pod wskowdev-invoker-55-15-whisksystem-invokerhealthtestaction0 (image:openwhisk/action-nodejs-v10:1.16.0, mem: 128) (timeout: 60s) [marker:invoker_kubeapi.create_start:12144347]
+[2024-03-26T01:02:44.784Z] [INFO] [#tid_sid_invokerHealth] [KubernetesClient]  [marker:invoker_kubeapi.create_finish:12149626:5279]
+[2024-03-26T01:02:44.828Z] [INFO] [#tid_sid_invokerHealth] [KubernetesContainer] sending initialization to ContainerId(wskowdev-invoker-55-15-whisksystem-invokerhealthtestaction0) ContainerAddress(10.244.12.220,8080) [marker:invoker_activationInit_start:12149669]
+[2024-03-26T01:02:44.872Z] [INFO] [#tid_sid_invokerHealth] [KubernetesContainer] initialization result: ok [marker:invoker_activationInit_finish:12149714:43]
+[2024-03-26T01:02:44.873Z] [INFO] [#tid_sid_unknown] [ContainerProxy] resending up to 0 from 0 buffered jobs
+[2024-03-26T01:02:44.873Z] [INFO] [#tid_sid_invokerHealth] [KubernetesContainer] sending arguments to /whisk.system/invokerHealthTestAction0 at ContainerId(wskowdev-invoker-55-15-whisksystem-invokerhealthtestaction0) ContainerAddress(10.244.12.220,8080) [marker:invoker_activationRun_start:12149714]
+[2024-03-26T01:02:44.883Z] [INFO] [#tid_sid_invokerHealth] [KubernetesContainer] running result: ok [marker:invoker_activationRun_finish:12149725:10]
+[2024-03-26T01:02:44.884Z] [INFO] [#tid_sid_invokerHealth] [ContainerProxy]  [marker:invoker_collectLogs_start:12149726]
+[2024-03-26T01:02:44.908Z] [INFO] [#tid_sid_invokerHealth] [ContainerProxy]  [marker:invoker_collectLogs_finish:12149750:24]
+[2024-03-26T01:02:44.909Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore] [PUT] 'test_activations' saving document: 'id: whisk.system/d7a95cf50e9d49cba95cf50e9d29cb9c, rev: null' [marker:database_saveDocument_start:12149751]
+[2024-03-26T01:02:44.910Z] [INFO] [#tid_sid_dbBatcher] [CouchDbRestStore] 'test_activations' saving 1 documents [marker:database_saveDocumentBulk_start:12127434]
+[2024-03-26T01:02:44.913Z] [INFO] [#tid_sid_invokerHealth] [MessagingActiveAck] posted completion of activation d7a95cf50e9d49cba95cf50e9d29cb9c
+[2024-03-26T01:02:44.935Z] [INFO] [#tid_sid_dbBatcher] [CouchDbRestStore]  [marker:database_saveDocumentBulk_finish:12127459:25]
+[2024-03-26T01:02:44.938Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore]  [marker:database_saveDocument_finish:12149779:28]
+[2024-03-26T01:05:42.244Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:12304764]
+[2024-03-26T01:05:42.299Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:12304822:57]
+[2024-03-26T01:05:42.299Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-26T01:10:42.262Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:12604784]
+[2024-03-26T01:10:42.326Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:12604848:62]
+[2024-03-26T01:10:42.326Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-26T01:12:45.009Z] [INFO] [#tid_sid_invokerNanny] [KubernetesClient] Deleting pod wskowdev-invoker-55-15-whisksystem-invokerhealthtestaction0 [marker:invoker_kubeapi.delete_start:12727532]
+[2024-03-26T01:12:45.163Z] [INFO] [#tid_sid_invokerNanny] [KubernetesClient]  [marker:invoker_kubeapi.delete_finish:12727686:153]
+[2024-03-26T01:15:42.281Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:12904804]
+[2024-03-26T01:15:42.339Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:12904863:58]
+[2024-03-26T01:15:42.341Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-26T01:20:42.301Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:13204824]
+[2024-03-26T01:20:42.368Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:13204892:67]
+[2024-03-26T01:20:42.368Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-26T01:25:42.320Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:13504844]
+[2024-03-26T01:25:42.370Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:13504894:50]
+[2024-03-26T01:25:42.371Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-26T01:30:42.342Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:13804865]
+[2024-03-26T01:30:42.412Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:13804936:70]
+[2024-03-26T01:30:42.413Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-26T01:35:42.361Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:14104884]
+[2024-03-26T01:35:42.413Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:14104937:53]
+[2024-03-26T01:35:42.413Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-26T01:40:42.381Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:14404904]
+[2024-03-26T01:40:42.436Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:14404960:56]
+[2024-03-26T01:40:42.437Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-26T01:45:42.400Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:14704923]
+[2024-03-26T01:45:42.446Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:14704969:46]
+[2024-03-26T01:45:42.446Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-26T01:50:42.421Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:15004944]
+[2024-03-26T01:50:42.485Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:15005008:63]
+[2024-03-26T01:50:42.487Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-26T01:55:42.440Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:15304963]
+[2024-03-26T01:55:42.494Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:15305018:54]
+[2024-03-26T01:55:42.495Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-26T02:00:42.462Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:15604985]
+[2024-03-26T02:00:42.523Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:15605046:61]
+[2024-03-26T02:00:42.524Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-26T02:05:42.481Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:15905004]
+[2024-03-26T02:05:42.538Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:15905062:57]
+[2024-03-26T02:05:42.539Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-26T02:10:42.510Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:16205034]
+[2024-03-26T02:10:42.558Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:16205082:48]
+[2024-03-26T02:10:42.559Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-26T02:15:42.532Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:16505055]
+[2024-03-26T02:15:42.592Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:16505115:59]
+[2024-03-26T02:15:42.592Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-26T02:20:42.551Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:16805074]
+[2024-03-26T02:20:42.602Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:16805125:50]
+[2024-03-26T02:20:42.604Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-26T02:25:42.571Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:17105094]
+[2024-03-26T02:25:42.629Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:17105152:57]
+[2024-03-26T02:25:42.630Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-26T02:30:42.591Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:17405114]
+[2024-03-26T02:30:42.651Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:17405174:59]
+[2024-03-26T02:30:42.651Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-26T02:35:42.611Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:17705134]
+[2024-03-26T02:35:42.668Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:17705191:56]
+[2024-03-26T02:35:42.668Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-26T02:40:42.632Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:18005154]
+[2024-03-26T02:40:42.698Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:18005221:66]
+[2024-03-26T02:40:42.698Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-26T02:45:42.650Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:18305174]
+[2024-03-26T02:45:42.703Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:18305226:52]
+[2024-03-26T02:45:42.703Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-26T02:50:42.672Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:18605194]
+[2024-03-26T02:50:42.728Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:18605251:55]
+[2024-03-26T02:50:42.728Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-26T02:55:42.690Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:18905214]
+[2024-03-26T02:55:42.738Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:18905262:48]
+[2024-03-26T02:55:42.739Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-26T03:00:42.711Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:19205234]
+[2024-03-26T03:00:42.771Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:19205294:59]
+[2024-03-26T03:00:42.771Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-26T03:05:42.732Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:19505253]
+[2024-03-26T03:05:42.787Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:19505311:57]
+[2024-03-26T03:05:42.787Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-26T03:10:42.753Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:19805274]
+[2024-03-26T03:10:42.807Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:19805331:56]
+[2024-03-26T03:10:42.807Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-26T03:15:42.771Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:20105294]
+[2024-03-26T03:15:42.837Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:20105359:64]
+[2024-03-26T03:15:42.838Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-26T03:20:42.791Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:20405313]
+[2024-03-26T03:20:42.840Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:20405364:50]
+[2024-03-26T03:20:42.840Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-26T03:25:42.811Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:20705334]
+[2024-03-26T03:25:42.879Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:20705402:67]
+[2024-03-26T03:25:42.881Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-26T03:30:42.830Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:21005354]
+[2024-03-26T03:30:42.885Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:21005408:54]
+[2024-03-26T03:30:42.885Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-26T03:35:42.851Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:21305374]
+[2024-03-26T03:35:42.906Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:21305430:56]
+[2024-03-26T03:35:42.907Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-26T03:40:42.871Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:21605394]
+[2024-03-26T03:40:42.929Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:21605453:58]
+[2024-03-26T03:40:42.930Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-26T03:45:42.892Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:21905414]
+[2024-03-26T03:45:42.940Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:21905464:50]
+[2024-03-26T03:45:42.940Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-26T03:50:42.911Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:22205434]
+[2024-03-26T03:50:42.973Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:22205497:62]
+[2024-03-26T03:50:42.973Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-26T03:55:42.931Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:22505453]
+[2024-03-26T03:55:42.987Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:22505510:56]
+[2024-03-26T03:55:42.989Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-26T04:00:42.961Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:22805484]
+[2024-03-26T04:00:43.016Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:22805539:54]
+[2024-03-26T04:00:43.016Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-26T04:05:42.981Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:23105503]
+[2024-03-26T04:05:43.035Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:23105559:55]
+[2024-03-26T04:05:43.036Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-26T04:10:43.002Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:23405524]
+[2024-03-26T04:10:43.059Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:23405583:58]
+[2024-03-26T04:10:43.059Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-26T04:15:43.030Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:23705553]
+[2024-03-26T04:15:43.091Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:23705613:59]
+[2024-03-26T04:15:43.092Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-26T04:20:43.051Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:24005574]
+[2024-03-26T04:20:43.114Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:24005637:62]
+[2024-03-26T04:20:43.114Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-26T04:25:43.070Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:24305594]
+[2024-03-26T04:25:43.121Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:24305645:51]
+[2024-03-26T04:25:43.121Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-26T04:30:43.091Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:24605614]
+[2024-03-26T04:30:43.151Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:24605675:61]
+[2024-03-26T04:30:43.151Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-26T04:35:43.112Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:24905634]
+[2024-03-26T04:35:43.173Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:24905697:63]
+[2024-03-26T04:35:43.174Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-26T04:40:43.131Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:25205654]
+[2024-03-26T04:40:43.185Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:25205709:53]
+[2024-03-26T04:40:43.185Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-26T04:45:43.151Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:25505674]
+[2024-03-26T04:45:43.207Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:25505731:56]
+[2024-03-26T04:45:43.208Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-26T04:50:43.172Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:25805694]
+[2024-03-26T04:50:43.228Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:25805751:56]
+[2024-03-26T04:50:43.229Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-26T04:55:43.201Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:26105725]
+[2024-03-26T04:55:43.246Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:26105769:44]
+[2024-03-26T04:55:43.248Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-26T05:00:43.221Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:26405744]
+[2024-03-26T05:00:43.278Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:26405801:57]
+[2024-03-26T05:00:43.278Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-26T05:05:43.241Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:26705764]
+[2024-03-26T05:05:43.299Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:26705823:59]
+[2024-03-26T05:05:43.299Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-26T05:10:43.271Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:27005794]
+[2024-03-26T05:10:43.316Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:27005840:46]
+[2024-03-26T05:10:43.316Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-26T05:15:43.292Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:27305815]
+[2024-03-26T05:15:43.350Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:27305874:59]
+[2024-03-26T05:15:43.351Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-26T05:20:43.310Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:27605834]
+[2024-03-26T05:20:43.364Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:27605888:54]
+[2024-03-26T05:20:43.364Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-26T05:25:43.331Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:27905854]
+[2024-03-26T05:25:43.394Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:27905917:62]
+[2024-03-26T05:25:43.394Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-26T05:30:43.350Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:28205873]
+[2024-03-26T05:30:43.395Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:28205918:44]
+[2024-03-26T05:30:43.395Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-26T05:35:43.373Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:28505894]
+[2024-03-26T05:35:43.431Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:28505954:59]
+[2024-03-26T05:35:43.431Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-26T05:40:43.391Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:28805914]
+[2024-03-26T05:40:43.446Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:28805970:55]
+[2024-03-26T05:40:43.446Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-26T05:45:43.411Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:29105935]
+[2024-03-26T05:45:43.464Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:29105986:51]
+[2024-03-26T05:45:43.465Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-26T05:50:43.431Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:29405954]
+[2024-03-26T05:50:43.482Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:29406006:51]
+[2024-03-26T05:50:43.483Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-26T05:55:43.450Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:29705973]
+[2024-03-26T05:55:43.495Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:29706018:45]
+[2024-03-26T05:55:43.495Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-26T06:00:43.471Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:30005994]
+[2024-03-26T06:00:43.525Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:30006048:53]
+[2024-03-26T06:00:43.527Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-26T06:05:43.491Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:30306014]
+[2024-03-26T06:05:43.548Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:30306072:57]
+[2024-03-26T06:05:43.549Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-26T06:10:43.512Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:30606034]
+[2024-03-26T06:10:43.560Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:30606083:48]
+[2024-03-26T06:10:43.560Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-26T06:15:43.532Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:30906054]
+[2024-03-26T06:15:55.549Z] [INFO] Message [akka.io.Dns$Resolved] from Actor[akka://invoker-actor-system/system/IO-DNS/inet-address/$d#1052722845] to Actor[akka://invoker-actor-system/system/IO-TCP/selectors/$a/128#2012296201] was not delivered. [6] dead letters encountered. If this is not an expected behavior, then [Actor[akka://invoker-actor-system/system/IO-TCP/selectors/$a/128#2012296201]] may have terminated unexpectedly, This logging can be turned off or adjusted with configuration settings 'akka.log-dead-letters' and 'akka.log-dead-letters-during-shutdown'.
+[2024-03-26T06:16:09.817Z] [INFO] [#tid_sid_invokerHealth] [InvokerReactive]  [marker:invoker_activation_start:30954659]
+[2024-03-26T06:16:09.818Z] [WARN] [#tid_sid_invokerHealth] [InvokerReactive] revision was not provided for whisk.system/invokerHealthTestAction0
+[2024-03-26T06:16:09.818Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore] [GET] 'test_whisks' finding document: 'id: whisk.system/invokerHealthTestAction0' [marker:database_getDocument_start:30954660]
+[2024-03-26T06:16:09.844Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore]  [marker:database_getDocument_finish:30954686:26]
+[2024-03-26T06:16:09.908Z] [INFO] [#tid_sid_invokerHealth] [ContainerPool] containerStart containerState: cold container: None activations: 1 of max 1 action: invokerHealthTestAction0 namespace: whisk.system activationId: 4ab932f292ef4ca9b932f292efdca9ce [marker:invoker_containerStart.cold_counter:30954750]
+[2024-03-26T06:16:09.915Z] [INFO] [#tid_sid_invokerHealth] [KubernetesClient] launching pod wskowdev-invoker-55-16-whisksystem-invokerhealthtestaction0 (image:openwhisk/action-nodejs-v10:1.16.0, mem: 128) (timeout: 60s) [marker:invoker_kubeapi.create_start:30954757]
+[2024-03-26T06:16:11.861Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:30934385:28331]
+[2024-03-26T06:16:11.861Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-26T06:16:13.238Z] [INFO] [#tid_sid_invokerHealth] [KubernetesClient]  [marker:invoker_kubeapi.create_finish:30958079:3322]
+[2024-03-26T06:16:13.278Z] [INFO] [#tid_sid_invokerHealth] [KubernetesContainer] sending initialization to ContainerId(wskowdev-invoker-55-16-whisksystem-invokerhealthtestaction0) ContainerAddress(10.244.27.66,8080) [marker:invoker_activationInit_start:30958120]
+[2024-03-26T06:16:13.320Z] [INFO] [#tid_sid_invokerHealth] [KubernetesContainer] initialization result: ok [marker:invoker_activationInit_finish:30958161:41]
+[2024-03-26T06:16:13.320Z] [INFO] [#tid_sid_invokerHealth] [KubernetesContainer] sending arguments to /whisk.system/invokerHealthTestAction0 at ContainerId(wskowdev-invoker-55-16-whisksystem-invokerhealthtestaction0) ContainerAddress(10.244.27.66,8080) [marker:invoker_activationRun_start:30958162]
+[2024-03-26T06:16:13.320Z] [INFO] [#tid_sid_unknown] [ContainerProxy] resending up to 0 from 0 buffered jobs
+[2024-03-26T06:16:13.328Z] [INFO] [#tid_sid_invokerHealth] [KubernetesContainer] running result: ok [marker:invoker_activationRun_finish:30958170:7]
+[2024-03-26T06:16:13.330Z] [INFO] [#tid_sid_invokerHealth] [ContainerProxy]  [marker:invoker_collectLogs_start:30958172]
+[2024-03-26T06:16:13.372Z] [INFO] [#tid_sid_invokerHealth] [ContainerProxy]  [marker:invoker_collectLogs_finish:30958214:42]
+[2024-03-26T06:16:13.374Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore] [PUT] 'test_activations' saving document: 'id: whisk.system/4ab932f292ef4ca9b932f292efdca9ce, rev: null' [marker:database_saveDocument_start:30958215]
+[2024-03-26T06:16:13.374Z] [INFO] [#tid_sid_dbBatcher] [CouchDbRestStore] 'test_activations' saving 1 documents [marker:database_saveDocumentBulk_start:30935898]
+[2024-03-26T06:16:13.379Z] [INFO] [#tid_sid_invokerHealth] [MessagingActiveAck] posted completion of activation 4ab932f292ef4ca9b932f292efdca9ce
+[2024-03-26T06:16:13.389Z] [INFO] [#tid_sid_invokerHealth] [InvokerReactive]  [marker:invoker_activation_start:30958231]
+[2024-03-26T06:16:13.389Z] [WARN] [#tid_sid_invokerHealth] [InvokerReactive] revision was not provided for whisk.system/invokerHealthTestAction0
+[2024-03-26T06:16:13.389Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore] [GET] 'test_whisks' finding document: 'id: whisk.system/invokerHealthTestAction0' [marker:database_getDocument_start:30958231]
+[2024-03-26T06:16:13.398Z] [INFO] [#tid_sid_dbBatcher] [CouchDbRestStore]  [marker:database_saveDocumentBulk_finish:30935922:24]
+[2024-03-26T06:16:13.399Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore]  [marker:database_saveDocument_finish:30958241:25]
+[2024-03-26T06:16:13.407Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore]  [marker:database_getDocument_finish:30958248:17]
+[2024-03-26T06:16:13.408Z] [INFO] [#tid_sid_invokerHealth] [ContainerPool] containerStart containerState: warmed container: Some(ContainerId(wskowdev-invoker-55-16-whisksystem-invokerhealthtestaction0)) activations: 1 of max 1 action: invokerHealthTestAction0 namespace: whisk.system activationId: 5add338c2a924ca29d338c2a924ca2df [marker:invoker_containerStart.warmed_counter:30958250]
+[2024-03-26T06:16:13.408Z] [INFO] [#tid_sid_invokerHealth] [KubernetesContainer] sending arguments to /whisk.system/invokerHealthTestAction0 at ContainerId(wskowdev-invoker-55-16-whisksystem-invokerhealthtestaction0) ContainerAddress(10.244.27.66,8080) [marker:invoker_activationRun_start:30958250]
+[2024-03-26T06:16:13.416Z] [INFO] [#tid_sid_invokerHealth] [KubernetesContainer] running result: ok [marker:invoker_activationRun_finish:30958258:7]
+[2024-03-26T06:16:13.417Z] [INFO] [#tid_sid_invokerHealth] [ContainerProxy]  [marker:invoker_collectLogs_start:30958259]
+[2024-03-26T06:16:13.436Z] [INFO] [#tid_sid_invokerHealth] [ContainerProxy]  [marker:invoker_collectLogs_finish:30958277:18]
+[2024-03-26T06:16:13.436Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore] [PUT] 'test_activations' saving document: 'id: whisk.system/5add338c2a924ca29d338c2a924ca2df, rev: null' [marker:database_saveDocument_start:30958278]
+[2024-03-26T06:16:13.437Z] [INFO] [#tid_sid_dbBatcher] [CouchDbRestStore] 'test_activations' saving 1 documents [marker:database_saveDocumentBulk_start:30935961]
+[2024-03-26T06:16:13.439Z] [INFO] [#tid_sid_invokerHealth] [MessagingActiveAck] posted completion of activation 5add338c2a924ca29d338c2a924ca2df
+[2024-03-26T06:16:13.456Z] [INFO] [#tid_sid_dbBatcher] [CouchDbRestStore]  [marker:database_saveDocumentBulk_finish:30935978:17]
+[2024-03-26T06:16:13.459Z] [INFO] [#tid_sid_invokerHealth] [CouchDbRestStore]  [marker:database_saveDocument_finish:30958300:22]
+[2024-03-26T06:20:43.551Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:31206074]
+[2024-03-26T06:20:43.614Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:31206137:61]
+[2024-03-26T06:20:43.614Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-26T06:25:43.570Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:31506093]
+[2024-03-26T06:25:43.620Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:31506144:50]
+[2024-03-26T06:25:43.621Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-26T06:26:13.524Z] [INFO] [#tid_sid_invokerNanny] [KubernetesClient] Deleting pod wskowdev-invoker-55-16-whisksystem-invokerhealthtestaction0 [marker:invoker_kubeapi.delete_start:31536048]
+[2024-03-26T06:26:13.665Z] [INFO] [#tid_sid_invokerNanny] [KubernetesClient]  [marker:invoker_kubeapi.delete_finish:31536188:140]
+[2024-03-26T06:30:43.591Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:31806114]
+[2024-03-26T06:30:43.641Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:31806165:51]
+[2024-03-26T06:30:43.641Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-26T06:35:43.612Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:32106134]
+[2024-03-26T06:35:43.665Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:32106188:53]
+[2024-03-26T06:35:43.666Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-26T06:40:43.631Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:32406154]
+[2024-03-26T06:40:43.683Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:32406206:52]
+[2024-03-26T06:40:43.684Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-26T06:45:43.651Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:32706173]
+[2024-03-26T06:45:43.701Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:32706225:51]
+[2024-03-26T06:45:43.702Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
+[2024-03-26T06:50:43.671Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore] [QUERY] 'test_subjects' searching 'namespaceThrottlings/blockedNamespaces [marker:database_queryView_start:33006194]
+[2024-03-26T06:50:43.719Z] [INFO] [#tid_sid_invoker] [CouchDbRestStore]  [marker:database_queryView_finish:33006242:48]
+[2024-03-26T06:50:43.721Z] [INFO] [#tid_sid_unknown] [InvokerReactive] updated blacklist to 0 entries
